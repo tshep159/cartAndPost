@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Kamogelofoundations - 403 ~Access Denied</title>
+    <div th:replace="/fragments/header :: header-css"/>
+    <link rel="shortcut icon" href="wtw.jpg" th:href="@{/img/fav.jpg}"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link href="css/font-awesome.min.css" rel="stylesheet" th:href="@{/css/font-awesome.min.css}"/>
+
+
+</head>
+<body>
+
+    <div class="se-pre-con"></div>
+    <div th:replace="/fragments/header :: header"/>
+
+    <div class="container" style="height: 50%;">
+
+        <div class="starter-template">
+            <h1 class="red-text" >403 - Access is denied!</h1>
+            <div class="green-text" th:inline="text">Hello '[[${#httpServletRequest.remoteUser}]]', you do not have permission to access this page.</div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+    <div th:replace="/fragments/footer :: footer"/>
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js" th:src="@{/js/materialize.js}"></script>
+    <script src="js/init.js" th:src="@{/js/init.js}"></script>
+
+</body>
+</html>

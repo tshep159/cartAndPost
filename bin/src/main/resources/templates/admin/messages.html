@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="/fragments/header :: header-css"/>
+</head>
+<body class="mee">
+<nav class="teal lighten-1" role="navigation">
+    <div class="nav-wrapper container">
+        <a id="logo-container" href="#" class="brand-logo" th:href="@{/}">FixMypLace</a>
+        <ul class="right hide-on-med-and-down">
+           <li  role="presentation"><a th:href="@{/admin/all/users}">Manage Users</a></li>
+            <li role="presentation"><a th:href="@{/admin/all/posts}">Manage Posts</a></li>
+            <li role="presentation"><a th:href="@{/account}">Settings</a></li>
+            <li class="active" role="presentation"><a th:href="@{/admin/messages}">Messages</a></li>
+            <li role="presentation"><a th:href="@{/logout}">Sign Out</a></li>
+
+        </ul>
+
+        <ul id="nav-mobile" class="sidenav ">
+      <li  role="presentation"><a th:href="@{/admin/all/users}">Manage Users</a></li>
+            <li role="presentation"><a th:href="@{/admin/all/posts}">Manage Posts</a></li>
+            <li role="presentation"><a th:href="@{/account}">Settings</a></li>
+            <li class="active" role="presentation"><a th:href="@{/admin/messages}">Messages</a></li>
+            <li role="presentation"><a th:href="@{/logout}">Sign Out</a></li>
+
+        </ul>
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons white-text">menu</i></a>
+    </div>
+</nav>
+
+     
+    <div th:replace="/fragments/messages :: messages"/>
+   
+     
+<!-- /.container -->
+<div th:replace="/fragments/footer :: footer"/>
+
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="js/materialize.js" th:src="@{/js/materialize.js}"></script>
+<script src="js/init.js" th:src="@{/js/init.js}"></script>
+
+</body>
+</html>

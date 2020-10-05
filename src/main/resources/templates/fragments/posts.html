@@ -1,0 +1,101 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  th:href="@{https://fonts.googleapis.com/icon?family=Material+Icons}" rel="stylesheet"/>
+  
+
+    <style>
+        .mee{background:#e5eaf1;
+            font-family:"lucida grande",tahoma,verdana,arial,sans-serif;
+            font-size:11px;color:#333;margin:0;
+            padding:0;text-align:left;
+            direction:ltr;
+            unicode-bidi:embed}
+    </style>
+
+</head>
+<body class="mee">
+
+<div th:fragment="posts">
+<script>
+function expandAll(){
+  $(".collapsible-header").addClass("active");
+  $(".collapsible").collapsible({accordion: false});
+}
+
+function collapseAll(){
+  $(".collapsible-header").removeClass(function(){
+    return "active";
+  });
+  $(".collapsible").collapsible({accordion: true});
+  $(".collapsible").collapsible({accordion: false});
+}
+
+</script>
+  <div class="container" >
+<br/><br/>
+  <a class="waves-effect waves-light btn" onClick="expandAll();"><i class="material-icons left">fullscreen</i>Expand All</a>
+  <a class="waves-effect waves-light btn" onClick="collapseAll();"><i class="material-icons left">fullscreen_exit</i>Collapse All</a>
+<br/><br/>
+
+<!--<div  th:each="l : ${carts}">
+        <ul class="collapsible" data-collapsible="expandable"  >
+            <li>
+              <div class="collapsible-header"><i class="mdi-navigation-chevron-right"></i><a name="987" th:text="${l.id}">First</a></div>
+              <div class="collapsible-body" th:each="a: ${items}"><p th:text="${a.product.name}">First Things First</p></div>
+                 </li>
+        
+        </ul>
+</div>
+    </div>-->
+    </div>
+<div class="container">
+
+<h1>Orders</h1>
+  <table class="highlight responsive-table white" id="productsTable">
+                                <tr>
+                                    <th>Product Id</th>
+                                    <th>Total</th>
+                               
+                                    <th>Date</th>
+                                    <th>Action</th>
+                                
+                                </tr>
+                                <tr th:each="l : ${carts}">
+
+                                   <td th:text="${l.id}">User Id</td>
+                                   <td th:text="${l.grandTotal}">User Id</td>
+                                   
+                                   <td >Date</td>
+                                <td><a class="btn red" th:href="${'/admin/view/cart/'+ l.id}"> 
+                                
+                                View Order<i class="material-icons prefix">mode_eye</i></a></td>
+             
+                                
+                                </tr>
+
+							
+                                <tr>
+     
+
+						     <th>Product Id</th>
+                                    <th>Total</th>
+                               
+                                    <th>Date</th>
+                                    <th>Action</th>
+                                
+                                 </tr>
+
+                            </table>
+
+
+
+
+
+
+
+
+
+    </div>
+
+</div>
+</body>
+</html>

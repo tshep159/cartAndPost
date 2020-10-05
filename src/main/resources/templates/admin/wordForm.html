@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head lang="en">
+
+        <title>Admin | Edit User</title>
+    <div th:fragment="header-css">
+        <!-- CSS  -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  th:href="@{https://fonts.googleapis.com/icon?family=Material+Icons}" rel="stylesheet"/>
+        <link href="../css/materialize.css" th:href="@{/css/materialize.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="../css/style.css" th:href="@{/css/style.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    </div>
+
+</head>
+<body  class="mee">
+    <div class="se-pre-con"></div>
+
+    <nav class="white lighten-1" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="#" class="brand-logo brown-text" th:href="@{/admin/users}">Admin Home</a>
+            <ul class="right hide-on-med-and-down">
+                <li  role="presentation"><a class="brown-text" th:href="@{/admin/all/users}"> Users</a></li>
+                <li class="active" role="presentation"><a class="brown-text" th:href="@{/admin/add/word}">Words</a></li>
+                <li role="presentation"><a class="brown-text" th:href="@{/logout}">Sign Out</a></li>
+
+            </ul>
+            <ul id="nav-mobile" class="sidenav white darken-3">
+                <li role="presentation"><a class="brown-text" th:href="@{/admin/all/users}"> Users</a></li>
+                <li class="active" role="presentation"><a class="brown-text" th:href="@{/admin/add/word}">Words</a></li>
+                <li role="presentation"><a class="brown-text" th:href="@{/logout}">Sign Out</a></li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons brown-text">menu</i></a>
+        </div>
+    </nav>
+<br/><br/>
+    <div class="container center">
+
+
+        <div class="row" th:if="${not #lists.isEmpty(adminMessage)}">			
+            <div class="col-xs-8 col-md-offset-2 col-md-8">			
+                <div class="alert alert-primary green fade in">
+                    <h5 class="white-text" th:utext="${adminMessage}"></h5>
+                </div>				
+            </div>
+        </div>
+
+        <form class="form-horizontal" th:object="${word}" th:action="@{/admin/add/word}" method="post">
+
+            <div class="form-group">
+
+                <div class="col-sm-9">
+                    <input type="text" th:field="*{word_item}" placeholder="Word"
+                           class="form-control" /> 
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-9">
+                    <input type="text" th:field="*{defination}"
+                           placeholder="Defination" class="form-control" /> 
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-9">
+                    <button type="submit" class="btn">Save</button>
+                </div>
+            </div>
+        </form>
+<br/>
+        <table class="highlight  white center">
+            <tr>
+                <th>word Id</th>
+                <th>Word</th>
+
+                <th>Defination</th>
+
+            </tr>
+            <tr th:each="word : ${words}">
+                <td th:text="${word.id}">email</td>
+                <td th:text="${word.word_item}">email</td>
+                <td th:text="${word.defination}">email</td>
+                <td>
+
+                </td>
+            </tr>
+
+            <tr>
+                <th>Word Id</th>
+                <th>Word</th>
+
+                <th>Defination</th>
+
+            </tr>
+        </table>
+<br/><br/>
+    </div>
+
+
+    <script src="js/materialize.js" th:src="@{/js/jquery.js}"></script>
+    <script src="js/init.js" th:src="@{/js/init.js}"></script>
+    <script src="js/materialize.js" th:src="@{/js/materialize.js}"></script>
+
+    <div th:replace="/fragments/adminfooter :: adminfooter"/>
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+
+    <div th:fragment="header-css">
+        <!-- CSS  -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  th:href="@{https://fonts.googleapis.com/icon?family=Material+Icons}" rel="stylesheet"/>
+        <link href="../css/materialize.css" th:href="@{/css/materialize.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="../css/style.css" th:href="@{/css/style.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link th:href="@{/css/myapp.css}" rel="stylesheet" type="text/css"/>
+        <link href="../css/style.css" th:href="@{/css/myapp.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="../css/style.css" th:href="@{/css/tabs.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    </div>
+
+</head>
+<body  class="mee">
+    
+	<div class="se-pre-con"></div>
+
+        <nav class="white lighten-1" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="#" class="brand-logo brown-text" th:href="@{/admin/all/users}">Admin Home</a>
+            <ul class="right hide-on-med-and-down">
+                <li class="active" role="presentation"><a class="brown-text" th:href="@{/admin/all/users}"> Users</a></li>
+               <li  role="presentation"><a class="brown-text" th:href="@{/admin/products/all}"> Products</a></li>
+                <li role="presentation"><a class="brown-text"  th:href="@{/user/logout}">Sign Out</a></li>
+
+            </ul>
+            <ul id="nav-mobile" class="sidenav white darken-3">
+                <li class="active" role="presentation"><a class="brown-text" th:href="@{/admin/all/users}"> Users</a></li>
+               <li  role="presentation"><a class="brown-text" th:href="@{/admin/products/all}"> Products</a></li>
+                <li role="presentation"><a class="brown-text"  th:href="@{/user/logout}">Sign Out</a></li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons brown-text">menu</i></a>
+        </div>
+    </nav>
+
+
+	<div class="container">
+
+		<h1 class="display-2">Products</h1>
+		<a class="btn btn-primary mb-5" href="/admin/products/add">Add New</a>
+
+		<div th:if="${message}" th:text="${message}"
+			th:class="${'alert ' + alertClass}"></div>
+
+		<div th:if="${!products.empty}">
+
+		<div class="row">
+			<div class="col s12 m7">
+				<div class="card" th:each="product: ${products}">
+					<div class="card-image">
+						<img src="images/sample-1.jpg"  th:src="@{'/media/' + ${product.image}}" />
+						
+					</div>
+					<div class="card-content">
+						<p th:text="${product.description}">I am a very simple card. I am good at containing small bits of information.
+							I am convenient because I require little markup to use effectively.
+							
+													
+							
+							
+							</p>
+					</div>
+					<div class="card-action" >
+						<a th:href="@{'/admin/products/edit/' + ${product.id}}">Edit</a>
+					<a th:href="@{'/admin/products/delete/' + ${product.id}}"
+						class="confirmDeletion">Delete</a>	
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		
+
+
+		<div th:unless="${!products.empty}">
+			<p>There are NO products at the moment</p>
+		</div>
+
+	</div>
+
+	<div th:replace="/fragments/footer"></div>
+
+
+</body>
+
+</html>

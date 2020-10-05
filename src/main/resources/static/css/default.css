@@ -1,0 +1,72 @@
+
+form.register{
+   
+    margin: 20px auto 0px auto;
+    height:auto;
+    background-color:#fff;
+    padding:5px;
+    -moz-border-radius:20px;
+    -webkit-border-radius:20px;
+}
+
+form.register .infobox{
+    float:left;
+    margin-top:10px;
+    border: 1px solid #F1F1F1;
+    padding:5px;
+    width:500px;
+    height:auto;
+    font-size:9px;
+    background: #FDFEFA url(../img/bg_infobox.gif) repeat-x top left;
+}
+form.register legend
+{
+    color: #abda0f;
+    padding:2px;
+    margin-left: 14px;
+    font-weight:bold;
+    font-size: 14px;
+    font-weight:100;
+}
+
+
+.button
+{
+    background: #abda0f url(../img/overlay.png) repeat-x;
+    padding: 8px 10px 8px;
+    color: #fff;
+    text-decoration: none;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+    cursor: pointer;
+    float:right;
+    font-size:18px;
+    margin-bottom:10px;
+}
+.pic
+{
+    background: #abda0f url(../img/overlay.png) repeat-x;
+    padding: 8px 10px 8px;
+    color: #fff;
+    text-decoration: none;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+    cursor: pointer;
+    float:left;
+    font-size:18px;
+    margin-bottom:10px;
+}
+p.info{
+    font-size:7pt;
+    color: gray;
+}
+
+
+
+

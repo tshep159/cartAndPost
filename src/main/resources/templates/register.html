@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<title>Login</title>
+
+<body>
+	
+
+	<h2>User's Registration</h2>
+	
+	<div class="container row">
+		<form action="#" th:action="@{/users/register}" th:object="${user}" method="post" class="form col-md-5 col-md-offset-7">			
+	 
+        
+                <legend>Account Details
+                </legend>
+
+                            <div class="row" th:if="${not #lists.isEmpty(successMessage)}">			
+                                <div class="col-xs-8 col-md-offset-2 col-md-8">			
+                                    <div class="alert alert-primary green fade in">
+
+                                        <h5 class="white-text" th:utext="${successMessage}"></h5></div>				
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+
+
+                                <div  class="input-field">
+
+                                    <label for="fn">First Name</label><br/>
+                                    <span  th:if="${#fields.hasErrors('first_name')}" th:errors="*{first_name}"
+                                           class="red-text"></span>
+                                    <input type="text"   id="fn" th:field="*{first_name}"
+                                           class="validate"/>
+
+
+
+                                </div>
+                            </div>
+
+                            <div class="input-field">
+                                <label for="ln">Last Name</label>
+                                <br/><span	th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"
+                                           class="red-text"></span>
+
+                                <input type="text" id="ln" th:field="*{lastName}"
+                                       class="validate" />
+
+
+                            </div>
+                            
+                            
+                            <div class="input-field">
+                                <label for="e">Email</label>
+                                <br/><span	th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
+                                           class="red-text"></span>
+
+                                <input type="text" id="e" th:field="*{email}"
+                                       class="validate" />
+                                
+                                <span class="helper-text"  data-success="Email seems to be correct"></span>
+
+
+                            </div>
+
+                            <div class="input-field">
+                                <label for="number">ID Number</label><br/>
+                                    <br/><span	th:if="${#fields.hasErrors('idNumber')}" th:errors="*{idNumber}"
+                                           class="red-text"></span>
+
+                                <input type="number" id="number" th:field="*{idNumber}"
+                                       class="validate" />
+                                
+                                <span class="helper-text"  data-success="ID seems to be correct"></span>
+
+
+                            </div>
+
+
+                            <div class="input-field">
+                                <label for="pw">Password</label>
+                                <br/>
+                                <span
+                                    th:if="${#fields.hasErrors('password')}" th:errors="*{password}"
+                                    class="red-text"></span>
+                                <input type="password" id="pw" th:field="*{password}"
+                                       class="form-control input-lg" />
+
+
+                            </div>
+
+
+                            <div class="input-field">
+
+                                <label for="cn">Contact Number</label><br/>
+                                <span
+                                    th:if="${#fields.hasErrors('contactNumber')}" th:errors="*{contactNumber}"
+                                    class="red-text"></span>
+                                <input type="number" id="cn" th:field="*{contactNumber}" 
+                                       class="validate"/>
+                                <span class="helper-text" data-error="Please enter numbers only!" data-success="Contact Number seems to be correct"></span>
+
+
+                            </div>
+
+
+
+
+                            <div class="input-field">
+                                <label for="un">Username</label><br/>
+                                <span
+                                    th:if="${#fields.hasErrors('username')}" th:errors="*{username}"
+                                    class="red-text"></span>
+                                <input type="text" id="un" th:field="*{username}"
+                                       class="form-control input-lg"/>
+                                   </div>
+
+                            <br/>
+
+
+
+         <legend>Address Information
+                </legend>
+
+                            <div class="input-field">
+                                <label for="l1">Line One</label><br/>
+                                <span th:if="${#fields.hasErrors('addressLineOne')}" th:errors="*{addressLineOne}"
+                                      class="red-text"></span>
+                                <input type="text" id="l1" th:field="*{addressLineOne}"
+                                       class="form-control input-lg" />
+
+
+                            </div>
+
+                            <div class="input-field">
+                                <label for="l2">Line Two</label>
+                                <br/>
+                                <span
+                                    th:if="${#fields.hasErrors('addressLineTwo')}" th:errors="*{addressLineTwo}"
+                                    class="red-text"></span>
+
+                                <input type="text" id="l2" th:field="*{addressLineTwo}"
+                                       class="form-control input-lg" />
+
+
+                            </div>
+
+
+                            <div class="input-field">
+                                <label for="city">Suburb</label>
+                                <br/>
+                                <span
+                                    th:if="${#fields.hasErrors('city')}" th:errors="*{city}"
+                                    class="red-text"></span>
+
+                                <input type="text" id="city" th:field="*{city}"
+                                       class="form-control input-lg" />
+
+
+
+                            </div>
+
+
+                            <div class="input-field">
+                                <label for="zip">Zip Code</label><br/>
+                                <span
+                                    th:if="${#fields.hasErrors('postalCode')}" th:errors="*{postalCode}"
+                                    class="red-text"></span>
+
+                                <input type="text" id="zip" th:field="*{postalCode}"
+                                       class="form-control input-lg" />
+
+
+                            </div>
+                            
+                      
+
+                            <div class="input-field">
+                                <div><button class="button">Register &raquo;</button></div>
+                            </div>
+
+                      
+                            <br />
+                        </form>
+
+	</div>	
+	
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>

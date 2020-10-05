@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+<title th:text="'FixMyPlace - ' + ${title}">FixMyPlace | Home</title>
+
+    <div th:fragment="header-css">
+        <!-- CSS  -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  th:href="@{https://fonts.googleapis.com/icon?family=Material+Icons}" rel="stylesheet"/>
+        <link href="../css/materialize.css" th:href="@{/css/materialize.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="../css/style.css" th:href="@{/css/style.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link th:href="@{/css/myapp.css}" rel="stylesheet" type="text/css"/>
+        <link href="../css/style.css" th:href="@{/css/myapp.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="../css/style.css" th:href="@{/css/tabs.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    </div>
+<style>
+    
+.demo-drawer-header {
+  color: #fff;
+}
+
+.demo-drawer .collection a.collection-item:not(.active):hover {
+    background-color: #00BCD4;
+}
+
+.mdl-color--blue-grey-800, .collection .collection-item {
+    background-color: #37474f;
+}
+
+.mdl-color-text--blue-grey-400 {
+    color: #78909c;
+}
+
+.mdl-color-text--grey-600 {
+    color: #757575;
+}
+
+.mdl-color--grey-100 {
+    background-color: #f5f5f5;
+}
+
+.mdl-color--blue-grey-900 {
+    background-color: #263238;
+}
+
+.mdl-color--teal-300 {
+  background-color: #4db6ac;
+}
+
+.demo-options .card {
+  background-color: #673ab7;
+  color: #fff;  
+}
+
+.demo-avatar-dropdown i {
+  margin-left: 125px;
+}
+
+.main-content, .sidebar .demo-drawer {
+  overflow-y: scroll;
+  height: 100%;
+  position: absolute;
+}
+
+.demo-layout .sidebar, .demo-layout .main-content {
+  padding: 0px;
+}
+
+.demo-layout .sidebar .collection, .demo-layout .sidebar .collection-item {
+  border: 0px;
+}
+
+.mdl-layout__drawer {
+  height: 100%;
+  max-height: 100%;
+  /*position: absolute;*/
+  top: 0;
+  left: 0;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+  box-sizing: border-box;
+  color: #424242;
+  overflow: visible;
+  overflow-y: auto;
+  z-index: 5;
+}
+
+
+html, body {
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+}
+.demo-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+}
+.demo-layout .demo-header .mdl-textfield {
+  padding: 0px;
+  margin-top: 41px;
+}
+.demo-layout .demo-header .mdl-textfield .mdl-textfield__expandable-holder {
+  bottom: 19px;
+}
+.demo-layout .mdl-layout__header .mdl-layout__drawer-button {
+  color: rgba(0, 0, 0, 0.54);
+}
+.mdl-layout__drawer .avatar {
+  margin-bottom: 16px;
+}
+.demo-drawer {
+  border: none;
+}
+/* iOS Safari specific workaround */
+.demo-drawer .mdl-menu__container {
+  z-index: -1;
+}
+/* END iOS Safari specific workaround */
+.demo-drawer .mdl-menu .mdl-menu__item {
+  display: flex;
+  align-items: center;
+}
+.demo-drawer-header {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 16px;
+  height: 151px;
+}
+.demo-avatar-dropdown {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.demo-navigation {
+  flex-grow: 1;
+}
+.demo-layout .demo-navigation .mdl-navigation__link {
+  display: flex !important;
+  flex-direction: row;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.56);
+  font-weight: 500;
+  padding: 16px 40px;
+}
+.demo-layout .demo-navigation .mdl-navigation__link:hover {
+  background-color: #00BCD4;
+  color: #37474F;
+}
+.demo-navigation .mdl-navigation__link .material-icons {
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.56);
+  margin-right: 32px;
+}
+
+ 
+
+</style>
+</head>
+<body  class="mee">
+    
+	<div class="se-pre-con"></div>
+
+        <nav class="white lighten-1" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="#" class="brand-logo brown-text" th:href="@{/admin/users}">Admin Home</a>
+            <ul class="right hide-on-med-and-down">
+                <li class="active" role="presentation"><a class="brown-text" th:href="@{/admin/all/users}"> Users</a></li>
+                <li role="presentation"><a class="brown-text" th:href="@{/admin/add/word}">Words</a></li>
+                <li role="presentation"><a class="brown-text" th:href="@{/logout}">Sign Out</a></li>
+
+            </ul>
+            <ul id="nav-mobile" class="sidenav white darken-3">
+                <li class="active" role="presentation"><a class="brown-text" th:href="@{/admin/all/users}"> Users</a></li>
+                <li role="presentation"><a class="brown-text" th:href="@{/admin/add/word}">Words</a></li>
+                <li role="presentation"><a class="brown-text" th:href="@{/logout}">Sign Out</a></li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons brown-text">menu</i></a>
+        </div>
+    </nav>
+
+
+
+    <div class="container">
+  
+
+       <h3 class="red-text" th:text=" 'Total number of users '+${total} "> </h3> 
+        <div class="row" th:if="${not #lists.isEmpty(adminMessage)}">			
+			<div class="col-xs-8 col-md-offset-2 col-md-8">			
+				<div class="alert alert-primary green fade in">
+                                    
+                        <h5 class="white-text" th:utext="${adminMessage}"></h5></div>				
+			</div>
+		        </div>   
+    <form th:object="${user}" th:action="@{/admin/students}" method="get">
+        <center> 
+            <div class="cyan">
+                
+                <h4 class="teal-text">Search for User</h4>
+        <input type="text" name="search" id="search" class="form-control" style="width: 28%;"  /><br/>
+       <br/> <input class="btn blue-grey " style="width: 28%;"  type="submit" value="Search"/>
+      <br/> <br/> <br/>
+            </div>
+      </center>
+       <div th:if="${not #lists.isEmpty(search)}">
+            <h2 class="teal-text">Users</h2>
+            <table class="highlight cyan-text white">
+                <tr>
+                 <th>User Id</th>
+                    <th>Email</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Username</th>
+                    <th>Activate/Deactivate</th>
+                      <th>Edit</th>
+                </tr>
+               <tr class="white"
+                   th:each="u : ${search}">
+
+                    <td th:text="${u.id}">User Id</td>
+                    <td th:text="${u.email}">email</td>
+                    <td th:text="${u.lastName}">Last Name</td>
+                    <td th:text="${u.first_name}">First Name</td>
+                    <td th:text="${u.username}">username</td>
+                   <td>
+                <center> <a class="btn red" th:href="${'/admin/activate/' + u.id}"> <i class="medium material-icons prefix">block</i></a></center>
+         
+                    </td>
+                        <td><a class="btn red" th:href="${'/admin/user/edit/'+ u.id}"> <i class="material-icons prefix">mode_edit</i></a></td>
+               
+                        
+                         <td><a class="btn red" th:href="${'/admin/view/user/'+ u.id}"> <i class="material-icons prefix">mode_edit</i></a></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+
+
+
+
+        <main>
+
+            <input id="tab1" type="radio" name="tabs" />
+            <label for="tab1">All Users</label>
+
+            <input id="tab2" type="radio" name="tabs"/>
+            <label for="tab2">Manage  Users</label>
+
+            <input id="tab3" type="radio" name="tabs"/>
+            <label for="tab3">Manage Words</label>
+
+            <input id="tab4" type="radio" name="tabs"/>
+            <label for="tab4">All </label>
+
+            <input id="tab5" type="radio" name="tabs"/>
+            <label for="tab5">Manage </label>
+
+            <input id="tab6" type="radio" name="tabs"/>
+            <label for="tab6">Requests</label>
+            <input id="tab7" type="radio" name="tabs"/>
+            <label for="tab7">Error Reports</label>
+
+
+            <section id="content1">
+                <!--List of users-->
+                <div class="white">
+                    <div class="highlight">
+                        <div th:if="${not #lists.isEmpty(users)}">
+                            <h2 class="teal-text">All Users</h2>
+                            <h5 class="red-text" th:text=" 'Total number of users '+${total} "> </h5> <h3 class="blue-text" th:utext="${adminMessage}"></h3>
+
+                            <table class="highlight responsive-table white" id="productsTable">
+                                <tr>
+                                    <th>User Id</th>
+                                    <th>Email</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Username</th>
+                                    <th>Cell</th>
+                                    <th>Line One</th>
+                                    <th>Line Two</th>
+                                    <th>Suburb</th>
+                                    <th>Last Login</th>
+                                    <th>Active</th>
+
+                                </tr>
+                                <tr th:each="user : ${users}">
+
+                                    <td th:text="${user.id}">User Id</td>
+                                    <td th:text="${user.email}">email</td>
+                                    <td th:text="${user.lastName}">Last Name</td>
+                                    <td th:text="${user.first_name}">First Name</td>
+                                    <td th:text="${user.username}">username</td>
+                                    <td th:text="${user.contactNumber}">Cell</td>
+                                    <td th:text="${user.addressLineOne}">Line One</td>
+                                    <td th:text="${user.addressLineTwo}">Line Two</td>
+                                    <td th:text="${user.city}">Suburb</td>
+                                     <td th:text="${user.lastLogin}">Suburb</td>  
+                                    <td  th:text="${user.active}">Zip</td>
+
+                                           <!--<td><a th:href="${'/user/delete/' + user.id}">Delete</a></td>-->
+                                </tr>
+
+                                <tr>
+
+                                    <th>User Id</th>
+                                    <th>Email</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Username</th>
+                                    <th>Cell</th>
+                                    <th>Line One</th>
+                                    <th>Line Two</th>
+                                    <th>Suburb</th>
+                                    <th>Last Login</th>
+                                    <th>Active</th>
+
+                                </tr>
+
+                            </table>
+                            <h5 class="red-text" th:text="'Total number of users '+${total} "></h5>
+                        </div>
+                        <br/><br/><br/>
+
+                    </div>
+                </div>
+                <!--List users end-->
+
+            </section>
+
+            <section id="content2">
+                <!--List of users-->
+                <div class="white">
+                    <div class="highlight">
+                        <div th:if="${not #lists.isEmpty(users)}">
+                            <h2 class="teal-text">All Normal Users</h2><h3 class="blue-text" th:utext="${adminMessage}"></h3>
+                       
+                            
+                            <h5 class="red-text" th:text=" 'Total number of  users '+${total} "> </h5>
+
+
+                            <table class="highlight responsive-table white" id="productsTable">
+                                <tr>
+                                    <th>User Id</th>
+                                    <th>Email</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Username</th>
+                                    <th>Cell</th>
+                                    <th>Line One</th>
+                                    <th>Line Two</th>
+                                    <th>Suburb</th>
+                                    <th>Last Login</th>
+                                    <th>Active</th>
+                                    <th>Activate/Deactivate</th>
+                                    <th>Edit</th>
+                                </tr>
+                                <tr th:each="user : ${users}">
+
+                                    <td th:text="${user.id}">User Id</td>
+                                    <td th:text="${user.email}">email</td>
+                                    <td th:text="${user.lastName}">Last Name</td>
+                                    <td th:text="${user.first_name}">First Name</td>
+                                    <td th:text="${user.username}">username</td>
+                                    <td th:text="${user.contactNumber}">Cell</td>
+                                    <td th:text="${user.addressLineOne}">Line One</td>
+                                    <td th:text="${user.addressLineTwo}">Line Two</td>
+                                    <td th:text="${user.city}">Suburb</td>
+                                    <td th:text="${user.lastLogin}">Suburb</td>       
+                                    <td  th:text="${user.active}">Zip</td>
+                                    <td>
+                                        <center> <a class="btn red" th:href="${'/admin/activate/' + user.id}"> <i class="medium material-icons prefix">block</i></a></center>
+
+                                    </td>
+                                    <td><a class="btn yellow" th:href="${'/admin/user/edit/'+ user.id}"> <i class="material-icons prefix">mode_edit</i></a></td>
+                                     <td><a class="btn red" th:href="${'/admin/view/user/'+ user.id}"> Quiz<i class="material-icons prefix">mode_edit</i></a></td>
+             
+                                    
+                                </tr>
+
+                                <tr>
+
+                                    <th>User Id</th>
+                                    <th>Email</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Username</th>
+                                    <th>Cell</th>
+                                    <th>Line One</th>
+                                    <th>Line Two</th>
+                                    <th>Suburb</th>
+                                    <th>Last Login</th>
+                                    <th>Active</th>
+                                    <th>Activate/Deactivate</th>
+                                    <th>Edit</th>
+                                </tr>
+
+                            </table>
+                            <h5 class="red-text" th:text="'Total number of  users '+${total} "></h5>
+                        </div>
+                        <br/><br/><br/>
+
+                    </div>
+                </div>
+                <!--List users end-->
+
+
+
+
+            </section>
+
+            <section id="content3">
+
+                <!--List Municipalities-->
+                <div class="brown">
+                    <div class="highlight">
+                        <div th:if="${not #lists.isEmpty(users)}">
+                            <h2 class="teal-text">Words</h2>
+                          
+                            <a th:href="@{/admin/add/word}">Add Word</a>
+                            <table class="highlight responsive-table white">
+                                <tr>
+                                    <th>word Id</th>
+                                    <th>Word</th>
+                                   
+                                    <th>Activate/Deactivate</th>
+                                    <th>Edit</th>
+                                </tr>
+                                <tr th:each="word : ${words}">
+                                     <td th:text="${word.id}">email</td>
+                                      
+                                    <td th:text="${word.word_item}">email</td>
+                                    <td>
+                                      
+                                    </td>
+                                     </tr>
+                                <tr>
+                                    <th>Word Id</th>
+                                    <th>Word</th>
+                               
+                                    <th>Activate/Deactivate</th>
+                                    <th>Edit</th>                         
+                                </tr>
+                            </table>
+                        </div>
+                        <br/>
+                        <br/>
+                        <br/>
+
+                    </div>
+                </div>
+                <!--List users end-->
+
+            </section>
+            <section id="content4">
+                
+                
+
+
+            </section>
+            <section id="content5">
+                <h1>Manage Events</h1>
+                
+                
+                
+                     
+                     <table class="table table-hover">
+		    		<thead>
+			      		<tr>
+					        <th>No.</th>
+					        <th>File Name</th>
+					        <th>Type</th>
+                                                 <th>Date</th>
+					        <th>Description</th>
+                                                <th>Active</th>
+					        <th width="100">Action</th>
+					        <th width="100"></th>
+						</tr>
+			    	</thead>
+		    	</table>
+	
+  
+            </section>
+
+            <section id="content6">
+                
+                
+            </section>
+            <section id="content7">
+                <h1>Error Reportsr</h1>
+                
+            </section>
+        </main>
+
+        <br/><br/><br/>
+ <h3 class="red-text" th:text=" 'Total number of users '+${total} "> </h3> 
+  
+ 
+   <div class="row" th:if="${not #lists.isEmpty(adminMessage)}">			
+    <div class="col-xs-8 col-md-offset-2 col-md-8">			
+       <div class="alert alert-primary green fade in">
+        <h5 class="white-text" th:utext="${adminMessage}"></h5>
+       </div>				
+    </div>
+    </div>
+
+        <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems, options);
+  });
+     </script>    
+     <script src="js/materialize.js" th:src="@{/js/jquery.js}"></script>
+     <script src="js/init.js" th:src="@{/js/init.js}"></script>
+    <script src="js/materialize.js" th:src="@{/js/materialize.js}"></script>
+   
+    
+     
+     
+     
+</div><div th:replace="/fragments/adminfooter :: adminfooter"/>
+</body>
+</html>

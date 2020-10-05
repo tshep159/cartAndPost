@@ -1,0 +1,432 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+    <head>
+    <div th:fragment="header-css">
+        <title th:text="'Kamogelo Foundations - ' + ${title}">>Kamogelo Foundations | Home</title>
+
+        <!-- CSS  -->
+
+        <link href="css/font-awesome.min.css" rel="stylesheet" th:href="@{/css/font-awesome.min.css}"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  th:href="@{https://fonts.googleapis.com/icon?family=Material+Icons}" rel="stylesheet"/>
+        <link href="../css/materialize.css" th:href="@{/css/materialize.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="../css/style.css" th:href="@{/css/style.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link rel="shortcut icon"  th:href="@{/img/fav.jpg}"/>
+
+
+    </div>
+    <style>
+
+        .container1 {
+            display: flex;
+            flex-direction: column;
+            max-width: 800px;
+            position: relative;
+            /*     top: 50%; */
+            left: 50%;
+            transform: translate(-50%, 0%);
+            -webkit-transform: translate(-50%, 0%);
+            -ms-transform: translate(-50%, 0%);
+            transition: 1s all ease-in-out;
+            -webkit-transition: 1s all ease-in-out;
+            -moz-transition: 1s all ease-in-out;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-panel {
+            padding-bottom: 0px;
+        }
+
+        #crickets {
+            width: 100px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        table td:nth-child(1) {
+            width: 34px;
+        }
+
+        table td:nth-child(3) {
+            width: 65px;
+        }
+
+        .bold {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .credit-card-box {
+            width: 400px;
+            height: 280px;
+            background: linear-gradient(135deg, #03A9F4, #1976D2);
+            border-radius: 15px;
+            color: #fff !important;
+            text-shadow: 0 1px 1px hsla(0, 0, 0, 0.3);
+        }
+
+        .input-field.cvv,
+        .input-field.number,
+        .input-field.card-holder,
+        .input-field.card-expiration-date {
+            display: inline-block;
+        }
+
+        .input-field.cvv {
+            top: -6px;
+            margin-left: 6px !important;
+        }
+
+        .input-field label {
+            color: #fff;
+            left: 0rem;
+        }
+
+        .select-wrapper+label {
+            top: -1.8rem;
+        }
+
+        .select-wrapper span.caret {
+            top: 2px;
+            color: #fff;
+        }
+
+        input:not([type]),
+        input[type=text],
+        input[type=password],
+        input[type=email],
+        input[type=url],
+        input[type=time],
+        input[type=date],
+        input[type=datetime-local],
+        input[type=tel],
+        input[type=number],
+        input[type=search],
+        textarea.materialize-textarea,
+        .select-wrapper input.select-dropdown {
+            border-bottom: 1px solid #fff;
+        }
+
+        .input-card-number {
+            font-size: 30px !important;
+            width: 70px !important;
+            display: inline-block;
+            margin-right: 5px !important;
+        }
+
+        .input-card-cvv {
+            width: 30px !important;
+            display: inline-block;
+        }
+
+        .card-holder {
+            width: 150px !important;
+            margin-right: 10px;
+        }
+
+        .card-expiration-date {
+            display: inline !important;
+        }
+
+        .card-expiration-date .select-wrapper,
+        .card-expiration-date input {
+            display: inline !important;
+            width: 50px !important;
+        }
+
+        .card-expiration-date .select-wrapper {
+            margin-right: 5px;
+        }
+
+        .card-expiration-date ul,
+        .card-expiration-date li span {
+            width: 50px !important;
+        }
+
+        .logo img {
+            position: relative;
+            top: 0px;
+            left: 290px;
+            width: 60px;
+            filter: invert(1);
+            -moz-filter: invert(1);
+            -webkit-filter: invert(1);
+        }
+
+        .checkout {
+            margin: 0px;
+        }
+
+        .btn-large {
+            margin: 10px 0%;
+            /*   width: 100%; */
+        }
+
+        .help {
+            text-align: center;
+        }
+
+        .animation-element {
+            opacity: 0;
+            position: relative;
+        }
+        /*animation element sliding left*/
+
+        .animation-element.slide-left {
+            opacity: 0;
+            -moz-transition: all 500ms linear;
+            -webkit-transition: all 500ms linear;
+            -o-transition: all 500ms linear;
+            transition: all 500ms linear;
+            -moz-transform: translate3d(100px, -10px, 100px);
+            -webkit-transform: translate3d(100px, -10px, 100px);
+            -o-transform: translate(100px, -10px);
+            -ms-transform: translate(100px, -10px);
+            transform: translate3d(100px, -10px, 100px);
+        }
+
+        .animation-element.slide-left.in-view {
+            opacity: 1;
+            -moz-transform: translate3d(0px, 0px, 0px);
+            -webkit-transform: translate3d(0px, 0px, 0px);
+            -o-transform: translate(0px, 0px);
+            -ms-transform: translate(0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+        }
+        .credit-card-box.animation-element:hover {
+            -moz-transition: all 200ms linear;
+            -webkit-transition: all 200ms linear;
+            -o-transition: all 200ms linear;
+            transition: all 200ms linear;
+            -moz-transform: translate3d(0px, -2px, 0px);
+            -webkit-transform: translate3d(0px, -2px, 0px);
+            -o-transform: translate(0px, -2px);
+            -ms-transform: translate(0px, -2px);
+            transform: translate3d(0px, -2px, 0px);
+            box-shadow: 0 16px 28px 0 rgba(0,0,0,0.22),0 25px 55px 0 rgba(0,0,0,0.21);
+
+        </style>
+
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+
+
+    </head>
+    <body >
+
+        <div class="se-pre-con"></div>
+        <div th:fragment="header">
+            <!-- this is header -->
+
+
+            <nav class="white darken-3" role="navigation">
+                <div class="nav-wrapper container"  >
+
+                    <a id="logo-container" href="#" class="brand-logo brown-text" th:href="@{/}"><img  th:src="@{/img/logo.jpg}" alt="Kamogelo Foundations" style="height:65px;"/></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li  class="active"  role="presentation"><a class="brown-text" th:href="@{/home}">Home</a></li>
+                        
+                        <li role="presentation" th:each="u : ${user}"> <a class="brown-text"  th:href="${'/view/user/'+ u.id}">My Quizes</a> </li>
+                        <li role="presentation" sec:authorize="isAuthenticated()"><a class="brown-text"  th:href="@{/payQuiz}">Begin Quiz</a></li>
+                        <li role="presentation"><a class="brown-text"  th:href="@{/winners}">Winners</a></li>
+
+                        <li role="presentation"><a class="brown-text" th:href="@{/logout}">Sign Out</a></li>
+                    </ul>
+
+                    <ul  id="nav-mobile" class="sidenav white darken-3">
+
+                        <li  class="active"  role="presentation"><a class="brown-text" th:href="@{/home}">Home</a></li>
+                       
+                        <li role="presentation" th:each="u : ${user}"> <a class="brown-text"  th:href="${'/view/user/'+ u.id}">My Quizes</a> </li>
+                        <li role="presentation" sec:authorize="isAuthenticated()"><a class="brown-text"  th:href="@{/payQuiz}">Begin Quiz</a></li>
+                        <li role="presentation"><a class="brown-text"  th:href="@{/winners}">Winners</a></li>
+
+                        <li role="presentation"><a class="brown-text" th:href="@{/logout}">Sign Out</a></li>
+
+
+                    </ul>
+                    <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons brown-text">menu</i></a>
+                </div>
+            </nav>
+        </div>
+
+        <form action='/charge' method='POST' id='checkout-form'>
+            <input type='hidden' th:value='${amount}' name='amount' />
+            <label>Price:<span th:text='${amount/100}' /></label>
+            <!-- NOTE: data-key/data-amount/data-currency will be rendered by Thymeleaf -->
+
+
+
+            <div class="container1">
+                <p class="help" style="color:#ffffff;">
+                    Please review your bill and pay </p>
+                <div class="box card-panel z-depth-3">
+                    <div class="merchant">
+                        <h4 class="card-panel red white-text">Please note that R20 will be deducted from your account,
+                            if it results to insufiant funds then you wont be able to participate in our quiz. 
+                        </h4>
+                        <center><img id="card" th:src="@{/img/logo.jpg}" alt="Kamogelo Foundations" /></center>
+                        <h5 class="center-align"></h5>
+                        <p>Feb 10, 2016 9:36 PM</p>
+                    </div>
+                    <div class="invoice">
+                        <table class="highlight">
+                            <thead>
+                                <tr>
+                                    <th>QTY</th>
+                                    <th>ITEM</th>
+                                    <th class="right-align">PRICE</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Quiz</td>
+                                    <td class="right-align">R20.00</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Winning price </td>
+                                    <td class="right-align">R200.00</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td class="right-align bold">Money To Be Deducted</td>
+                                    <td class="right-align bold">R20.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="payment">
+                        <h5>Payment Information</h5>
+                        <div class="credit-card-box card-panel z-depth-2 animation-element slide-left">
+                            <div class="flip">
+                                <div class="front">
+                                    <div class="logo">
+                                        <!--<img src="http://cdn.flaticon.com/svg/39/39134.svg" alt="" />-->
+                                    </div>
+                                    <div class="number input-field">
+                                        <label for="card-number">Card Number</label>
+                                        <input type="text" id="card-number" class="input-card-number" maxlength="4" />
+                                        <input type="text" id="card-number-1" class="input-card-number" maxlength="4" />
+                                        <input type="text" id="card-number-2" class="input-card-number" maxlength="4" />
+                                        <input type="text" id="card-number-3" class="input-card-number" maxlength="4" />
+                                    </div>
+                                    <div class="cvv input-field">
+                                        <label for="card-cvv">CVV</label>
+                                        <input type="text" id="card-cvv" class="input-card-cvv" maxlength="3" />
+                                    </div>
+                                    <div class="card-holder input-field">
+                                        <label for="name">Card Holder</label>
+                                        <input type="text" name="name" id="name"/>
+                                    </div>
+
+                                    <div class="card-expiration-date input-field">
+                                        <select id="month">
+                                            <option></option>
+                                            <option>Jan</option>
+                                            <option>Feb</option>
+                                            <option>Mar</option>
+                                            <option>Apr</option>
+                                            <option>May</option>
+                                            <option>Jun</option>
+                                            <option>Jul</option>
+                                            <option>Aug</option>
+                                            <option>Sep</option>
+                                            <option>Oct</option>
+                                            <option>Nov</option>
+                                            <option>Dec</option>
+                                        </select>
+                                        <select>
+                                            <option></option>
+                                            <option>2016</option>
+                                            <option>2017</option>
+                                            <option>2018</option>
+                                            <option>2019</option>
+                                            <option>2020</option>
+                                            <option>2021</option>
+                                            <option>2022</option>
+                                            <option>2023</option>
+                                            <option>2024</option>
+                                            <option>2025</option>
+                                        </select>
+                                        <label>Expires</label>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="button checkout row">
+                        <script
+                            src='https://checkout.stripe.com/checkout.js'
+                            class='stripe-button'
+                            th:attr='data-key=${stripePublicKey}, 
+                            data-amount=${amount}, 
+                            data-currency=${currency}'
+                            data-name='Kamogelo Foundations'
+                            data-description='Kamogelo Foundations checkout'
+                            data-image
+                            ='http://www.baeldung.com/wp-content/themes/baeldung/favicon/android-chrome-192x192.png'
+                            data-locale='auto'
+                            data-zip-code='false'>
+                        </script>
+                        <button class="col s12 btn-large green btn waves-effect waves-dark register"><span>Checkout</span> <i class="fa fa-check"></i></button>
+
+                        <a class="col s12 btn-large green btn waves-effect waves-dark register" th:href="@{/new/quiz}">Goto Quiz</a>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+
+            <script
+                src='https://checkout.stripe.com/checkout.js'
+                class='stripe-button'
+                th:attr='data-key=${stripePublicKey}, 
+                data-amount=${amount}, 
+                data-currency=${currency}'
+                data-name='Kamogelo Foundations'
+                data-description='Kamogelo Foundations checkout'
+                data-image
+                ='http://www.baeldung.com/wp-content/themes/baeldung/favicon/android-chrome-192x192.png'
+                data-locale='auto'
+                data-zip-code='false'>
+            </script>
+        </form>
+
+
+        <script>
+            $(document).ready(function () {
+                $('select').material_select();
+            });
+        </script>
+
+
+
+
+
+
+        <div th:replace="/fragments/footer :: footer"/>
+
+        <!--  Scripts-->
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="js/materialize.js" th:src="@{/js/materialize.js}"></script>
+        <script src="js/init.js" th:src="@{/js/init.js}"></script>
+
+    </body>
+</html>

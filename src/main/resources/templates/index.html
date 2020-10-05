@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title th:text="'Business - ' + ${title}"> Home</title>
+ 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  th:href="@{https://fonts.googleapis.com/icon?family=Material+Icons}" rel="stylesheet"/>
+    <link href="../css/materialize.css" th:href="@{/css/materialize.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="../css/style.css" th:href="@{/css/style.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link rel="shortcut icon" th:href="@{/img/fav.jpg}"/>
+     
+    <style>
+
+    </style>
+</head>
+<body class="mee">
+    
+    
+	<div class="se-pre-con"></div>
+      <nav class="white darken-3 " role="navigation">
+          <div class="nav-wrapper container">
+            
+              <a id="logo-container" href="#" class="brand-logo brown-text" th:href="@{/}"><img  th:src="@{/img/lmmo.jpg}" alt="Business Management" style="height:65px;"/></a>  <ul class="right hide-on-med-and-down white-text">
+                  <li  role="presentation"><a class="brown-text" th:href="@{/login}">Sign In</a></li>
+                  <li role="presentation"><a class="brown-text" th:href="@{/registration}">Sign Up</a></li>
+
+              </ul>
+
+              <ul id="nav-mobile" class="sidenav white darken-3">
+                   <li  role="presentation"><a class="brown-text" th:href="@{/login}">Sign In</a></li>
+                  <li role="presentation"><a class="brown-text" th:href="@{/registration}">Sign Up</a></li>
+
+              </ul>
+              <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons brown-text">menu</i></a>
+          </div>
+      </nav>
+
+
+      <div id="index-banner" class="parallax-container">
+          <div class="section no-pad-bot">
+              <div class="container">
+
+                  <h1 class="header center white-text text-lighten-2">Business Management</h1>
+                  <div class="row center">
+                      <h5 class="header col s12 light">.....</h5>
+                  </div>
+                  
+                    <div class="row center">
+                      <a href="#" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get the App <li class="material-icons">android</li></a>
+                  </div>
+
+              </div>
+          </div>
+          
+          <div class="parallax"><img src="../static/img/floot.jpg" th:src="@{/img/drop.png.jpg}" alt="Background image"/></div>
+      </div>
+
+
+      <div class="container">
+          <div class="section ">
+
+              <!--   Icon Section   -->
+              <div class="row card">
+                  <center>
+                  <div class="col s12 m4 green">
+                      <div class="icon-block">
+                            <br/>
+                          <h2 class="big-icons-wrapper pulse white-text "><i class="big-icons material-icons ">person_add</i>
+                           <h5 class="center white-text">Sign Up</h5>
+                          </h2>
+
+                             
+                       </div>
+                  </div>
+
+                  <div class="col s12 m4 blue">
+                      <div class="icon-block">
+                          <br/>
+                          <h2 class="big-icons-wrapper pulse white-text"><i class="big-icons material-icons">lock_open
+                          </i></h2>
+                          <h5 class="center white-text">Sign In</h5>
+                      </div>
+                  </div>
+
+                  
+                  <div class="col s12 m4 brown">
+                      <div class="icon-block ">
+                          <br/>
+                          <h2 class="big-icons-wrapper pulse white-text"><i class="big-icons material-icons">search</i></h2>
+                          <h5 class="center white-text">Create a Quote</h5>
+                      </div>
+                  </div>
+
+                  </center>
+              </div>
+          </div>
+      </div>
+
+          <div class="section me">
+                  <div class="me col s12 center ">
+
+                          <div class="container">
+
+                          <h3><i class="mdi-content-send white-text"></i></h3>
+                          <h4 class="white-text">Understanding Business Management</h4>
+                              <h6 class="left-align light pink-text"></h6>
+                  </div>
+
+          </div>
+
+      </div>
+
+    
+    
+    
+    
+     <div class="parallax-container valign-wrapper">
+          <div class="section no-pad-bot">
+              <div class="container">
+                  <div class="row center">
+                      <h5 class="header col s12 light">Your word is important to us, please click <a href="#" th:href="@{/add/suggestion}">here</a> to suggest anything that you
+                      feel is missing from this app.
+                      </h5>
+                  </div>
+              </div>
+          </div>
+          <div class="parallax"><img src="index.jpg" th:src="@{/img/lapcup...jpg}" alt="Background image"/></div>
+      </div>
+ 
+  <div th:replace="/fragments/nfooter :: nfooter"/>
+     
+<!-- <a  href="#modal1" class="btn-floating pulse  modal-trigger" id="view-source"><i class="material-icons">chat</i></a>
+
+     <div id="diamond"></div>
+   -->   <!--  Scripts-->
+      <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script src="js/materialize.js" th:src="@{/js/materialize.js}"></script>
+      <script src="js/init.js" th:src="@{/js/init.js}"></script>
+    </body>
+</html>

@@ -1,0 +1,66 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <div th:fragment="header-css">
+    <title th:text="'pLaze - ' + ${title}">FixMyPlace | Home</title>
+ 
+        <!-- CSS  -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  th:href="@{https://fonts.googleapis.com/icon?family=Material+Icons}" rel="stylesheet"/>
+        <link href="../css/materialize.css" th:href="@{/css/materialize.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="../css/style.css" th:href="@{/css/style.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+         <link rel="shortcut icon"  th:href="@{/img/fav.jpg}"/>
+    
+         
+ <link href="/2/css/bootstrap.min.css"  th:ref="@{/2/css/bootstrap.min.css}" rel='stylesheet' type='text/css' />
+<!-- Custom CSS -->
+<link href="css/style.css" th:ref="@{/2/css/style.css}" rel='stylesheet' type='text/css' />
+<!-- Graph CSS -->
+<link href="css/font-awesome.css" th:ref="@{/2/css/font-awesome.css}" rel="stylesheet"/> 
+<!-- jQuery -->
+<link href='//fonts.googleapis.com/css?family=Roboto:700,500,300,100italic,100,400' rel='stylesheet' type='text/css'/>
+<link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'/>
+<!-- lined-icons -->
+<link rel="stylesheet" href="css/icon-font.min.css" th:ref="@{/2/css/icon-font.min.css}" type='text/css' />
+<script src="js/amcharts.js" th:src="@{/2/js/amcharts.js}" ></script>	
+<script src="js/serial.js" th:src="@{/2/js/serial.js}"></script>	
+<script src="js/light.js" th:src="@{/2/js/light.js}"></script>	
+<!-- //lined-icons -->
+<script src="js/jquery-1.10.2.min.js" th:src="@{/2/js/jquery-1.10.2.min.js}" ></script>
+         
+
+    </div>
+
+    </head>
+    <body>
+        <div th:fragment="adminheader">
+       <nav class="sidenav teal darken-3" role="navigation">
+    <div class="nav-wrapper container">
+        <a id="logo-container" href="#" class="brand-logo white-text" th:href="@{/admin/all/users}">Kamogelo Foundations</a> 
+        <ul class="right hide-on-med-and-down white-text">
+
+            <li class="active" role="presentation"><a th:href="@{/admin/all/users}">Manage Users</a></li>
+            <li role="presentation"><a th:href="@{/admin/all/posts}">Manage Words</a></li>
+            <li role="presentation"><a th:href="@{/account}">Settings</a></li>
+            <li role="presentation"><a th:href="@{/logout}">Sign Out</a></li>
+
+        </ul>
+
+        <ul id="nav-mobile" class="sidenav teal darken-3">
+            <li class="active" role="presentation"><a th:href="@{/admin/all/users}">Manage Users</a></li>
+            <li role="presentation"><a th:href="@{/admin/all/posts}">Manage Words</a></li>
+            <li role="presentation"><a th:href="@{/account}">Settings</a></li>
+            <li role="presentation"><a th:href="@{/admin/all/messages}">Messages</a></li>
+            <li role="presentation"><a th:href="@{/logout}">Sign Out</a></li>
+
+        </ul>
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons white-text">menu</i></a>
+    </div>
+          
+</nav>
+        </div> 
+        
+        
+        
+        
+    </body>
+</html>

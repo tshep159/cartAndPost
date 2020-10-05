@@ -1,0 +1,68 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    
+     <link href="../css/style.css" th:href="@{/css/style.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+</head>
+<body>
+<div th:fragment="nfooter">
+ <footer class="page-footer teal darken-3">
+        <div class="container">
+      <div class="row center-on-small-only">
+          
+                  <div class="col l6 s12  hide-on-small-only">
+                      <h5 class="white-text">Kamogelo Foundations</h5>
+                      <p class="white-text text-lighten-4">
+                           Keeping you in touch with what's happening out there. Aiming to get your word
+                           out there with no hustle. 
+
+                      </p>
+
+
+                  </div>
+                  <div class="col l3 s12">
+                      <h5 class="white-text">Useful Links</h5>
+                      <ul>
+                          <li role="presentation"><a class="white-text" th:href="@{/login}">Sign In</a></li>
+                          <li role="presentation"><a class="white-text" th:href="@{/registration}">Sign Up</a></li>
+                          <li role="presentation"><a class="white-text" th:href="@{/about}">About Us</a></li>
+                          <li role="presentation"><a class="white-text" th:href="@{/faq}">FAQ</a></li>
+                          <li role="presentation"><a class="white-text" th:href="@{/privacy}">Privacy</a></li>
+                          <li role="presentation"><a class="white-text" th:href="@{/privacy}">Help</a></li>
+                          
+                      </ul>
+                  </div>
+                   <div class="col l3 s12">
+                 
+                   
+                      <ul class="scoialinks">
+                        
+                                <li class="social-icons"><a class="facebook"  href="http://www.facebook.com/plaze"></a></li>
+                                <li class="social-icons"><a class="twitter"  href="http://www.twitter.com/plaze" ></a></li>
+                             
+                                <li class="social-icons"><a class="google-plus" href="https://plus.google.com/u/0/116002274838316609050"></a></li>
+                           
+                            </ul>
+                  
+                </div>
+          
+              </div>
+          </div>
+          <div class="footer-copyright">
+              <div class="container center">
+                  <center>    <p class="copyright">© Copyright 2019 <a class="white-text" href="#" target="_blank">Kamogelo Foundations ink</a></p></center>
+              </div>
+          </div>
+      </footer>
+</div>
+    <a  href="#modal1" class="btn-floating pulse  modal-trigger" id="view-source"><i class="material-icons">chat</i></a>
+
+<!--
+     <div id="diamond"></div>
+   -->   <!--  Scripts-->
+      <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script src="js/materialize.js" th:src="@{/js/materialize.js}"></script>
+      <script src="js/init.js" th:src="@{/js/init.js}"></script>
+    </body>
+</html>

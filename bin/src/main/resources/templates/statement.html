@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link href="css/font-awesome.min.css" rel="stylesheet" th:href="@{/css/font-awesome.min.css}"/>
+  
+
+    <div th:replace="/fragments/header :: header-css"/>
+
+</head>
+<body class="mee">
+
+<div th:replace="/fragments/header :: header"/>
+
+<h2>Take a test</h2>
+
+<h2>View your Test History</h2>
+<h2>View your Test History</h2>
+
+
+
+
+  
+<div th:replace="/fragments/footer :: footer"/>
+
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="js/materialize.js" th:src="@{/js/materialize.js}"></script>
+<script src="js/init.js" th:src="@{/js/init.js}"></script>
+
+</body>
+</html>

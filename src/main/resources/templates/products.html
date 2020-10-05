@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title th:text="'Business - ' + ${title}"> Home</title>
+ 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  th:href="@{https://fonts.googleapis.com/icon?family=Material+Icons}" rel="stylesheet"/>
+    <link href="../css/materialize.css" th:href="@{/css/materialize.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="../css/style.css" th:href="@{/css/style.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link rel="shortcut icon" th:href="@{/img/fav.jpg}"/>
+     
+    <style>
+
+    </style>
+</head>
+<body class="mee">
+    
+    
+	<div class="se-pre-con"></div>
+      <nav class="white darken-3 " role="navigation">
+          <div class="nav-wrapper container">
+            
+              <a id="logo-container" href="#" class="brand-logo brown-text" th:href="@{/}"><img  th:src="@{/img/lmmo.jpg}" alt="Business Management" style="height:65px;"/></a>  <ul class="right hide-on-med-and-down white-text">
+                  <li  role="presentation"><a class="brown-text" th:href="@{/login}">Sign In</a></li>
+                  <li role="presentation"><a class="brown-text" th:href="@{/registration}">Sign Up</a></li>
+
+              </ul>
+
+              <ul id="nav-mobile" class="sidenav white darken-3">
+                   <li  role="presentation"><a class="brown-text" th:href="@{/login}">Sign In</a></li>
+                  <li role="presentation"><a class="brown-text" th:href="@{/registration}">Sign Up</a></li>
+
+              </ul>
+              <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons brown-text">menu</i></a>
+          </div>
+      </nav>
+
+
+	<div class="container mt-5">
+
+		<div class="row">
+			
+			<div class="col-8">
+
+				<h2 class="display-3 mb-5"
+					th:text="${categoryName} ?: 'All products'"></h2>
+
+				<div class="row">
+					<div class="col-4" th:each="product: ${products}">
+						<p>
+							<img style="width: 100px;"
+								th:src="@{'/media/' + ${product.image}}"/>
+						</p>
+						<h4 th:text="${product.name}"></h4>
+						<div class="desc" th:utext="${product.description}"></div>
+						<p th:text="'$' + ${product.price}"></p>
+						<div style="position: relative;">
+							<p>
+								<a class="btn btn-primary addToCart"
+									th:attr="data-id=${product.id}"
+									th:href="@{'/cart/add/' + ${product.id}}">Add to cart</a> 
+							</p>
+							<div class="btn btn-sm btn-success hide productAdded">Product
+								added!</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<footer th:replace="/fragments/footer"></footer>
+	
+	<script type="text/javascript">
+	
+	  $("a.addToCart").click(function (e) {
+          e.preventDefault();
+
+          let $this = $(this);
+
+          $this.next().removeClass('d-none');
+
+          let id = $this.attr("data-id");
+          let url = "/cart/add/"+id;
+
+          $.get(url, {}, function (data) {
+              $('div.cart').html(data);
+          }).done(function () {
+              $this.parent().parent().find('div.productAdded').fadeIn();
+              $this.next().addClass('d-none');
+              setTimeout(() => {
+                  $this.parent().parent().find('div.productAdded').fadeOut();
+              }, 1000);
+          });
+      });
+	
+	</script>
+	
+</body>
+
+</html>

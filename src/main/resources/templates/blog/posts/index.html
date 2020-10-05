@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:th="http://www.thymeleaf.org">
+<head>
+ <title>Home</title>
+ <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+ <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css"/>
+ <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"/>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#" th:utext="${userName}">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/posts">Requests</a>
+      </li>
+  
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/admin/categories/add}">Categories</a>
+      </li> 
+      <li class="nav-item">
+        <a class="nav-link" href="/admin/all/users" >Dashboard</a>
+      </li>
+   	
+   	  <li class="nav-item">
+        <a class="nav-link" th:href="@{user/logout}" >Logout</a>
+      </li>
+   		
+   
+    </ul>
+     
+  </div>
+</nav>
+
+	
+	<div class="container">		
+
+		<div class="list-group" th:each="p : ${posts}" >
+  
+<br/>
+  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active"  >
+    <div class="d-flex w-100 justify-content-between" >
+      <h5 class="mb-1" >    <span th:if="${p.author}" th:remove="tag">
+		    
+		        <span th:text="${p.author.firstname != null ? p.author.lastname : p.author.email}">Svetlin Nakov</span>
+		    
+		    </span></h5>
+      <small class="text-muted" th:text="${#dates.format(p.date, 'dd-MMM-yyyy')}" >3 days ago</small>
+    </div>
+    <p class="mb-1"  th:text="${p.title}" >Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+    <small class="text-muted" th:text="${p.body}">Donec id elit non mi porta.</small>
+    
+    
+    
+      <h5 >    <span th:if="${p.author}" th:remove="tag">
+		    
+		       <h5>Contact Details</h5> 
+		       <hr/>
+		       <span th:text="'Email: '+${p.author.email}">Svetlin Nakov</span><br/>
+		       <span th:text="'Address: '+${p.author.cell}">Svetlin Nakov</span><br/>
+		       <span th:text="'Cell: '+${p.author.address}">Svetlin Nakov</span>
+		       
+		    
+		    </span></h5>
+     
+	 
+  </a>
+     <a th:href="@{'/posts/delete/'+${p.id}}"><button type="button" class="btn btn-danger">Delete</button></a>
+                            
+</div>
+		
+		
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	
+	</div><!-- ./ container -->
+</body>
+</html>

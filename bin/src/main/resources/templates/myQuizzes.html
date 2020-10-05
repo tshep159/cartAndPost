@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head  th:replace="fragments/head :: headerFragment">
+</head>
+<body ng-app="myQuizzesApp" th:attr="ng-init='userId='+${#authentication.principal.id}">
+
+	<div class="se-pre-con"></div>
+	<div th:replace="fragments/header :: header">...</div>
+
+	<div class="container">
+
+		
+<div class="container">
+
+
+        <div class="col m3 m2">
+            <div class="card small" th:each="post : ${quizes}">
+                <div class="button">
+                    <a class="blue-text" th:text="${post.user.first_name }+' '+${post.user.lastName}" >User</a>
+                   
+                </div>
+                <div class="card-content">
+                   
+                    <h6 class="panel-body" th:text="'Quiz No :'+${post.id}">Body</h6>
+                                <h6 class="panel-body" th:text="'Total Score :'+${post.total}">Body</h6>
+                                
+                                <h6 class="panel-body" th:text="'Price :'+${post.cost}">Body</h6>
+                                
+                                <h6 class="panel-body" th:text="'Words :'+${post.numberOfQuizQuestions}">Body</h6>
+                                 <h6 class="panel-body red-text " th:text="'Written On: ' + ${#dates.format(post.createdDate, 'dd-MMM-yyyy hh:mm:ss a')}">Created by</h6>
+                
+                                 <br/>
+                
+                </div>
+                
+           
+            </div>
+        </div>
+
+    </div>
+
+	</div>
+	
+	<div th:replace="fragments/angular :: angular">...</div>
+	<script type="text/javascript" src="../js/myQuizzesApp.js"
+		        th:src="@{/js/myQuizzesApp.js}"></script>
+
+</body>
+</html>

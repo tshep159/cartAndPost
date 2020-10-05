@@ -1,0 +1,57 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  th:href="@{https://fonts.googleapis.com/icon?family=Material+Icons}" rel="stylesheet"/>
+  
+
+    <style>
+        .mee{background:#e5eaf1;
+            font-family:"lucida grande",tahoma,verdana,arial,sans-serif;
+            font-size:11px;color:#333;margin:0;
+            padding:0;text-align:left;
+            direction:ltr;
+            unicode-bidi:embed}
+    </style>
+
+</head>
+<body class="mee">
+<div th:fragment="posts">
+
+
+<div class="container">
+
+
+        <div class="col m3 m2">
+            <div class="card small" th:each="post : ${quiz}">
+                <div class="button">
+                    <a class="blue-text" th:text="${post.user.first_name }+' '+${post.user.lastName}" >User</a>
+                  
+                </div>
+                <div class="card-content">
+                   
+                    <h6 class="panel-body" th:text="'Quiz No :'+${post.id}">Body</h6>
+                                <h6 class="panel-body" th:text="'Total Score :'+${post.total}">Body</h6>
+                                
+                                <h6 class="panel-body" th:text="'Price :'+${post.cost}">Body</h6>
+                                
+                                <h6 class="panel-body" th:text="'Words :'+${post.numberOfQuizQuestions}">Body</h6>
+                                 <h6 class="panel-body red-text " th:text="'Written On: ' + ${#dates.format(post.createdDate, 'dd-MMM-yyyy hh:mm:ss a')}">Created by</h6>
+              
+                 
+                    
+
+                <a class="btn-floating btn-large waves-effect waves-light blue" id="add" th:href="${'/view/quiz/'+post.id+'/answers'}">
+        <i class="material-icons" role="presentation">visibility</i>
+        
+        Answers</a>
+      
+                
+                </div>
+                
+           
+            </div>
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>

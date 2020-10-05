@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <div th:replace="/fragments/header :: header-css"/>
+</head>
+<body>
+<div th:replace="/fragments/header :: header"/>
+
+<!--
+ <div class="row"  >
+        <div class="col m12 m7">
+            <div class="card"  >
+                <div class="card-action">
+                    <div><a th:text="${message.user.username}">User</a></div>
+                    <hr/>
+                </div>
+                <div class="card-content">
+                    <h7 class="panel-body" th:text="${message.body}">Body</h7>
+                </div>
+                <div class="card-action" th:if="${username}">
+                    <a class="mee" href="#">views</a>
+                    <a th:href="@{'/editPost/{id}'(id=${message.id})}" class="col-md-2"> Edit</a>
+
+                    <a href="#">This is a link</a>
+                </div>
+                <div class="card-action">
+                
+
+                </div>
+            </div>
+        </div>
+    </div>-->
+
+</div>
+<!-- /.container -->
+
+<div th:replace="/fragments/footer :: footer"/>
+
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="js/materialize.js" th:src="@{/js/materialize.js}"></script>
+<script src="js/init.js" th:src="@{/js/init.js}"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,67 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <div th:fragment="header-css">
+    <title th:text="'Kamogelo Foundations - ' + ${title}">>Kamogelo Foundations | Home</title>
+ 
+        <!-- CSS  -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  th:href="@{https://fonts.googleapis.com/icon?family=Material+Icons}" rel="stylesheet"/>
+        <link href="../css/materialize.css" th:href="@{/css/materialize.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="../css/style.css" th:href="@{/css/style.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+         <link rel="shortcut icon"  th:href="@{/img/fav.jpg}"/>
+    
+
+    </div>
+
+</head>
+<body >
+    
+	<div class="se-pre-con"></div>
+<div th:fragment="header">
+    <!-- this is header -->
+
+
+   <nav class="white darken-3" role="navigation">
+          <div class="nav-wrapper container"  >
+             
+              <a id="logo-container" href="#" class="brand-logo brown-text" th:href="@{/}"><img  th:src="@{/img/logo.jpg}" alt="Kamogelo Foundations" style="height:65px;"/></a>
+              <ul class="right hide-on-med-and-down">
+                 <li  class="active"  role="presentation"><a class="brown-text" th:href="@{/home}">Home</a></li>
+               <!-- <li role="presentation"><a class="brown-text" >Practise</a></li>-->
+                <li role="presentation" th:each="u : ${user}"> <a class="brown-text"  th:href="${'/view/user/'+ u.id}">My Quizes</a> </li>
+                 <li role="presentation" sec:authorize="isAuthenticated()"><a class="brown-text"  th:href="@{/checkout}">Begin Quiz</a></li>
+                  <li role="presentation"><a class="brown-text"  th:href="@{/winners}">Winners</a></li>
+                    
+                <li role="presentation"><a class="brown-text" th:href="@{/logout}">Sign Out</a></li>
+            </ul>
+
+            <ul  id="nav-mobile" class="sidenav white darken-3">
+                
+                <li  class="active"  role="presentation"><a class="brown-text" th:href="@{/home}">Home</a></li>
+              <!--  <li role="presentation"><a class="brown-text" >Practise</a></li>-->
+                <li role="presentation" th:each="u : ${user}"> <a class="brown-text"  th:href="${'/view/user/'+ u.id}">My Quizes</a> </li>
+                <li role="presentation" sec:authorize="isAuthenticated()"><a class="brown-text"  th:href="@{/payQuiz}">Begin Quiz</a></li>
+                <li role="presentation"><a class="brown-text"  th:href="@{/winners}">Winners</a></li>
+                    
+                <li role="presentation"><a class="brown-text" th:href="@{/logout}">Sign Out</a></li>
+
+
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons brown-text">menu</i></a>
+        </div>
+    </nav>
+</div>
+
+
+	       <script src="js/materialize.js" th:src="@{/js/jquery.js}"></script>
+
+              <script src="js/materialize.js" th:src="@{/js/script.js}"></script>
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script src="js/materialize.js" th:src="@{/js/materialize.js}"></script>
+      <script src="js/init.js" th:src="@{/js/init.js}"></script>
+	
+	
+		        
+</body>
+</html>

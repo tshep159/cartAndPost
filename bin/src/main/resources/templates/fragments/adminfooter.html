@@ -1,0 +1,58 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+</head>
+<body>
+<div th:fragment="adminfooter">
+ <footer class="page-footer teal darken-3">
+        <div class="container">
+            <div class="row center-on-small-only center-on-med-only">
+                <div class="col l3 s12">
+                    <h5 class="white-text">Settings</h5>
+                       <ul>
+                   
+                 <li  role="presentation"><a class="white-text" th:href="@{/home}">change password</a></li>
+                <li role="presentation"><a class="white-text">edit profile</a></li>
+             
+                <li role="presentation"><a class="white-text"  th:href="@{/search}">Find a Place</a></li>
+                
+                    
+                    </ul>
+                </div>
+                    
+                    <div class="col l3 s12">
+                    <h5 class="white-text">Useful Links</h5>
+                    <ul>
+                   
+                 <li class="active" role="presentation"><a th:href="@{/admin/all/users}">Manage Users</a></li>
+            <li role="presentation"><a th:href="@{/admin/all/posts}">Manage Posts</a></li>
+            <li role="presentation"><a th:href="@{/admin/add/place}">Manage Place</a></li>
+            <li role="presentation"><a th:href="@{/admin/all/suggestions}">Manage Suggestions</a></li>
+            <li role="presentation"><a th:href="@{/logout}">Sign Out</a></li>
+                    
+                    
+                    </ul>
+                </div>
+                <div class="col l6 s12">
+                    <h5 class="white-text">Keep In Touch</h5>
+                    <ul>
+                          <li role="presentation"><a class="white-text" th:href="@{/logout}">Facebook</a></li>
+                            <li role="presentation"><a class="white-text" th:href="@{/logout}">Twitter</a></li>
+                              <li role="presentation"><a class="white-text" th:href="@{/logout}">Google +</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+          <div class="footer-copyright">
+              <div class="container center">
+                  <center>    <p class="copyright">© Copyright 2018 <a class="white-text" href="#" target="_blank">pLaze ink</a></p></center>
+              </div>
+          </div>
+    </footer>
+</div>
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="js/materialize.js" th:src="@{/js/materialize.js}"></script>
+<script src="js/init.js" th:src="@{/js/init.js}"></script>
+</body>
+</html>

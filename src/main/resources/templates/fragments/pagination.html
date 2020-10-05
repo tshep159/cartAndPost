@@ -1,0 +1,40 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+       <link href="css/font-awesome.min.css" rel="stylesheet" th:href="@{/css/font-awesome.min.css}"/>
+  
+</head>
+<body class="mee">
+<div th:fragment="pagination">
+
+    <!-- Pagination -->
+    <div class="pagination" th:with="baseUrl=${URLparameter}">
+        <span th:if="${pager.indexOutOfBounds()}">
+            Nothing to show. Go back to <a class="pageLink"
+                                                 th:href="@{${baseUrl}(page=1)}">Home</a>.
+        </span>
+
+        <span th:unless="${pager.indexOutOfBounds()}">
+             
+       <center>   
+             
+               <ul>
+                   <li><a class="btn-flat red white-text" th:if="${pager.hasPrevious()}"
+                          th:href="@{${baseUrl}(page=${pager.getPageIndex() - 1})}"> <center><i class="fa fa-angle-double-left"></i> </center> </a></li>
+          
+
+         <!--   <span th:if="${pager.getTotalPages() != 1}"
+                  th:text="'Page ' + ${pager.getPageIndex()} + ' of ' + ${pager.getTotalPages()} + '.'">
+            </span>-->
+
+<li> <a class="btn-flat blue white-text " th:if="${pager.hasNext()}"
+        th:href="@{${baseUrl}(page=${pager.getPageIndex() + 1})}"><center><i class="fa fa-angle-double-right"></i></center></a></li>
+               </ul>
+            
+           </center>
+        </span>
+    </div>
+    <br/><br/>
+</div>
+</body>
+</html>

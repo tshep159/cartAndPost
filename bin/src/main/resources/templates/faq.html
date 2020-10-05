@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title th:text="'Kamogelo Foundations - ' + ${title}"></title>
+
+
+        <!-- CSS  -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  th:href="@{https://fonts.googleapis.com/icon?family=Material+Icons}" rel="stylesheet"/>
+        <link href="../css/materialize.css" th:href="@{/css/materialize.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="../css/style.css" th:href="@{/css/style.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="../css/style.css" th:href="@{/css/main.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="../css/style.css" th:href="@{/css/myapp.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <style>
+
+            .demo-ribbon {
+                width: 100%;
+                height: 40vh;
+                background-color: #3F51B5;
+                flex-shrink: 0;
+            }
+
+            .demo-main {
+                margin-top: -35vh;
+                flex-shrink: 0;
+            }
+
+            .demo-header .mdl-layout__header-row {
+                padding-left: 40px;
+            }
+
+            .demo-container {
+                max-width: 1600px;
+                width: calc(100% - 16px);
+                margin: 0 auto;
+            }
+
+            .demo-content {
+                border-radius: 2px;
+                padding: 80px 56px;
+                margin-bottom: 80px;
+                background-color: #fff;
+            }
+
+            .demo-layout.is-small-screen .demo-content {
+                padding: 40px 28px;
+            }
+
+            .demo-content h3 {
+                margin-top: 48px;
+            }
+
+            .demo-footer {
+                padding-left: 40px;
+            }
+
+            .demo-footer .mdl-mini-footer--link-list a {
+                font-size: 13px;
+            }
+
+        </style>
+    </head>
+    <body class="mee">
+
+
+        <div class="se-pre-con"></div>
+        <nav class=" white darken-3" role="navigation">
+            <div class="nav-wrapper container">
+
+                <a id="logo-container" href="#" class="brand-logo black-text" th:href="@{/}"><img  th:src="@{/img/logo.jpg}" alt="Kamogelo Foundations" style="height:65px;"/></a>
+                <ul class="right hide-on-med-and-down">
+                    <li  role="presentation"><a class="black-text"  th:href="@{/login}">Sign In</a></li>
+                    <li role="presentation"><a class="black-text"  th:href="@{/registration}">Sign Up</a></li>
+                    <li  role="presentation"><a class="black-text" th:href="@{/about}">About Us</a></li>
+                    <li class="active" role="presentation"><a class="black-text" th:href="@{/faq}">FAQ</a></li>
+                </ul>
+
+                <ul id="nav-mobile" class="sidenav white darken-3">
+                    <li  role="presentation"><a class="black-text" th:href="@{/login}">Sign In</a></li>
+                    <li role="presentation"><a class="black-text" th:href="@{/registration}">Sign Up</a></li>
+                    <li  role="presentation"><a class="black-text" th:href="@{/about}">About Us</a></li>
+                    <li class="active black-text" role="presentation"><a class="black-text" th:href="@{/faq}">FAQ</a></li>
+                   </ul>
+                <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons black-text">menu</i></a>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="demo-ribbon"></div>
+            <div class="demo-layout">        
+                <main class="demo-main">
+
+                    <div class="demo-container">
+                        <div class="">
+                        </div>
+                        <div class="demo-content card-panel col s12 m8 offset-m2">
+                            <div class="demo-crumbs">
+                                <h1>    Kamogelo Foundations &gt; Frequently Asked Questions 
+
+                                </h1>
+                                <h6 class="center teal-text">Here are the answers to your most common questions</h6>
+
+                            </div>
+                            <ul>
+                                <li>   <strong> <b><h3 class=" ">Introduction</h3></b></strong></li>
+                                <p><h6>
+                                        This Application will soon be  available for downloads from the Google Play Store identified by kamogelofoundations.
+                                        The App enables users to participate in our spelling quiz.
+                                        Kamogelo Foundations aims at improving local community’s sustainability by providing
+                                        different community development projects to empower people in need of funds and provides social sustainability. The chairperson and Founder of the organization,
+                                        Mr.Keketsi Samuel Matlawa saw a need in providing for local communities,  We boast ourselves with our very own special 
+                                        and unique ‘’Spelling Kay’’ and other many more projects tailored for local communities.
+                                    </h6>
+                                </p>
+                                <p>
+                                    <h4 class="cyan-text">1. How old do you have to be to be in the Spelling Kay Campaign?</h4>
+                                    <p class=" ">One has to be 16 years and above to participate in the Spelling Kay Campaign and there
+                                        is no maximum age to qualify.</p>
+                                </p>
+
+
+                                <p>
+                                    <h4 class="cyan-text">2. How does the Spelling Kay Campaign work?</h4>
+                                    <p class="">
+                                        Spelling Kay Campaign has only one round consisting of Ten (10) words,whereby should any participant that get all the words correct will receive their price…Participants can take part as many times as they like,irrespective of getting the words correct in their previous attempt.
+                                        Kindly note that in Spelling Kay Campaign you are not competing with anyone,and should 
+
+                                        you succesfully complete your round your price will be paid into your given account upon registration.
+                                        The words as well as the definition will only be given twice to the participant…
+                                    </p>
+                                </p>
+
+
+                                <h4 class="cyan-text">3.Why is spelling Kay Campaign so important?</h4>
+                                <p>
+
+                                    <b>Spelling</b> Kay is a campaign that empowers and allows participants students and general community members to have financial freedom,
+                                    to enable them to further their studies and upgrade their business with accessible and non reunding method.
+                                </p>
+
+
+                                <p>
+                                    <h4 class="cyan-text">4. Why can't i login anymore?</h4>
+                                    <p>We took an extra effort to ensure the safety of all our users. If you can nolonger login, posibilities are you we're 
+                                        temporarily suspended from using the app reason being you might no be following our privacy and usage policy.</p>
+                                </p>
+
+                                <p>
+                                    <h4 class="cyan-text">5. Why is it called a Spelling Kay Campaign ?</h4>
+                                    <p>Spelling Kay Campaign is derived from Kamogelo Foundations,a foundation that outsources resources for communities in need for a better developed youth within the South African parameters.</p>
+                                </p>
+
+
+                                <p>
+                                    <h4 class="cyan-text">6. What countries have Spelling Kay Campaign?</h4>
+                                    <p>South Africa only and it will remain like that for the next 20 years unless otherwise stated by management and deemed necessary</p>
+                                </p>
+                                <p>
+                                    <h4 class="cyan-text">7. What are the Spelling Kay campaign rules?</h4>
+                                    <p>The words and the definition will be given only twice, unsubmitted words are taken as incorrect words.</p>
+                                </p>
+                                <p>
+                                    <h4 class="cyan-text">8. What are the benefits of Spelling Kay Campaign?</h4>
+                                    <p> <ul>
+                                            <li> Enhancing Vocabulary</li>
+                                            <li>Greater Knowledge</li>
+                                            <li>Cognitive Skills</li>
+                                            <li>Financial freedom</li>
+                                            <li>Confidence</li>
+                                        </ul>
+
+                                        The valuable learning outcome of spelling Kay Campaign results in 
+                                        the participants gaining competency over vocabulary and this allows them 
+                                        to excel at understanding  and how to use the words effectively. ...
+                                    </p>
+                                </p>
+                            </ul>
+
+
+
+                            <p>
+                                <h4 class="cyan-text">9. Why was i logged out while attempting to write a quiz?</h4>
+                                <p>This is because your payment was unsuccessful, this is due to no funds in your account. </p>
+                            </p>
+                            <br/>
+                            <br/>
+
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <div th:replace="/fragments/nfooter :: nfooter"/>
+        <!--  Scripts-->
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="js/materialize.js" th:src="@{/js/materialize.js}"></script>
+        <script src="js/init.js" th:src="@{/js/init.js}"></script>
+
+    </body>
+</html>

@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title th:text="'Kamogelo Foundations - ' + ${title}">>FixMyPlace | Home</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  th:href="@{https://fonts.googleapis.com/icon?family=Material+Icons}" rel="stylesheet"/>
+    <link href="../css/materialize.css" th:href="@{/css/materialize.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="../css/style.css" th:href="@{/css/style.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+<link href="../css/style.css" th:href="@{/css/main.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+<link href="../css/style.css" th:href="@{/css/myapp.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+ <link rel="shortcut icon" href="wtw.jpg" th:href="@{/img/fav.jpg}"/>
+
+</head>
+<body class="mee">
+    
+	<div class="se-pre-con"></div>
+    <nav class="white darken-3" role="navigation">
+          <div class="nav-wrapper container">
+              
+              <a id="logo-container" href="#" class="brand-logo black-text" th:href="@{/}"><img  th:src="@{/img/logo.jpg}" alt="Kamogelo Foundations" style="height:65px;"/></a>
+              <ul class="right hide-on-med-and-down">
+            <li  role="presentation"><a class="black-text" th:href="@{/login}">Sign In</a></li>
+            <li  role="presentation"><a class="black-text" th:href="@{/registration}">Sign Up</a></li>
+            <li role="presentation"><a class="black-text" th:href="@{/about}">About Us</a></li>
+            <li role="presentation"><a class="black-text" th:href="@{/faq}">FAQ</a></li>
+            <li class="active" role="presentation"><a class="black-text" th:href="@{/privacy}">Privacy</a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="sidenav white darken-3">
+            <li  role="presentation"><a class="black-text" th:href="@{/login}">Sign In</a></li>
+            <li role="presentation"><a class="black-text" th:href="@{/registration}">Sign Up</a></li>
+            <li role="presentation"><a class="black-text" th:href="@{/about}">About Us</a></li>
+            <li role="presentation"><a class="black-text" th:href="@{/faq}">FAQ</a></li>
+            <li class="active" role="presentation"><a class="black-text" th:href="@{/privacy}">Privacy</a></li>
+        </ul>
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons black-text">menu</i></a>
+    </div>
+</nav>
+
+      <div id="index-banner" class="parallax-container">
+          <div class="section no-pad-bot">
+              <div class="">
+                
+                  <h1 class="header center teal-text text-lighten-2">Kamogelo Foundations</h1>
+                  <div class="row center">
+                      <h5 class="header col s12 light">Terms And Usage Policy</h5>
+                  </div>
+                  <div class="row center">
+                      <a href="#" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get the App <li class="material-icons">android</li></a>
+                  </div>
+                 
+
+              </div>
+          </div>
+          <div class="parallax"><img src="../static/img/shake.jpg" th:src="@{/img/shake.jpg}" alt="Unsplashed background img 1"/></div>
+      </div>
+          <div class="section">
+
+<section class="">
+
+        <div class="container">
+
+            <h1 class="title">Kamogelo Foundations Application Terms and Conditions</h1>
+           
+            <ol>
+                <li><span>Introduction</span>
+                    <ol>
+                        <li><span>This Application is available for downloads from the Google Play Store identified by 
+                               pLace
+ </span></li>
+                        
+                        
+                        <li> The App enables uses to post their municipality related issues  and also it allows them
+                            to see their issue status, progress, and also get feedback from the municipality that they are 
+                            posting to.
+                            
+                          </li>
+                    
+                        <li><span>These Terms and Conditions are binding
+ and enforceable against every person that accesses or uses the App  ,
+ including without limitation each user who registers as contemplated below 
+. </span><strong>By using the App , you acknowledge that you have
+                            read and agree to be bound by these Terms and Conditions.</strong><span>&nbsp;You must not use the App if you do not agree to the Terms and Conditions.</span>
+                        </li>
+                    </ol>
+                </li>
+                <li><span>Important Notice</span>
+
+                    <h3>PART A – ORDERS AND SALES</h3>
+                </li>
+
+                <li>
+
+
+                    <span>How it works</span>
+
+                    <ol class="c2 lst-kix_list_4-1 start" start="1">
+                        <li><span>
+You may post an issue to a municipality through the App.
+At the time of posting you are required to find that particular municipality that you want to 
+communicate with. Municipalities are identified by their provinces.  
+                            
+                            </span>
+                        </li>
+                        <li><span>
+
+All the municipalities that you have posted on, you may receive communication, by email, call etc, 
+where clarity is needed. Irrelevant issues will be deleted from the App and such users shall be noted and might not be 
+able to use the App for a certain time.
+
+</span>
+                        </li>
+                        <li><span>
+    A user is able to see issues posted by other users, a user is able find the municipality from anywhere.                        
+            </span>
+                        </li>
+                        <li><span> 
+              You  may post an issue to a municipality which is registered with us. Don't be surprised if you can't find your
+              municipality because we may at any time suspend or terminate the availability of a municipality from the App, in our 
+              sole discretion.
+                            
+                            </span>
+                        </li>
+                  
+
+                    </ol>
+                </li>
+                <li><span>Registration and use of the App</span>
+
+                    <ol class="c2 lst-kix_list_4-1 start" start="1">
+                        <li><span>Only registered users may post an issue to a municipality.</span></li>
+                        <li id="h.gjdgxs"><span>To register as a user 
+                            through the App, you must provide us with your
+                             unique email address, personal details and any 
+                            other relevant information required.&nbsp; You will thereafter 
+                              be issued a randomly generated 
+                            password. If you register as a user 
+                            &nbsp;</span>
+                        </li>
+                                            <li><span>You will need to use your unique 
+                    username and password to post an issue on the App. &nbsp;You agree 
+                    that a FixmypLace operator may call you to confirm your personal 
+                    details, post information and municipality that you are posting to. For security purposes you 
+                    agree to enter your correct username and password whenever posting an issue
+                     via the App. </span>
+                                            </li>
+                        <li><span>You agree and warrant that your username and password (if applicable) shall:</span>
+                            <ol class="c2 lst-kix_list_4-2 start" start="1">
+                                <li class="c9"><span>be used for personal use only; and</span></li>
+                                <li class="c9"><span>not be disclosed by you to any third party.</span></li>
+                            </ol>
+                        </li>
+
+                    </ol>
+
+                </li>
+
+
+                <li><span>Errors</span>
+
+                    <p class="bold"><span>We shall take all reasonable 
+efforts to accurately reflect or inform you of the Food description, 
+availability, purchase price, Courier Delivery service charges and 
+Telephone Services charges via the App or Telephone Service. However, 
+should there be any errors of whatsoever nature on the App or Telephone 
+Service (which are not due to our gross negligence), we shall not be 
+liable for any loss, claim or expense relating to an order or Sale based
+ on any error, the rejection of an order or the cancellation of a Sale, 
+save </span><span class="c6 c0 c33">to the extent of refunding you for any amount already paid</span><span>. </span>
+                    </p>
+
+                </li>
+                <li id="h.3znysh7"><span>Complaints</span>
+                    <ol class="c2 lst-kix_list_4-1 start" start="1">
+                        <li><span>We want you to be happy with your 
+purchase. Please let us know by telephone or email as soon as possible 
+if there is a problem with your Food quality and/or temperature, if you 
+receive the wrong Food or if you receive Food which is not as described 
+on the App. </span>
+                        </li>
+                        <li><span>Save where we determine in our sole 
+discretion that the cause for the complaint was due to the fault of Mr 
+Delivery, we will communicate your complaint to the relevant Restaurant,
+ and thereafter the matter will need to be resolved by the parties to 
+the Sale of Food, being you and the Restaurant, and Mr Delivery shall 
+bear no liability in relation to such complaint. </span>
+                        </li>
+                    </ol>
+                </li>
+                <li id="h.2et92p0"><span>Coupons</span>
+                
+
+                    <h3>PART B – PRIVACY POLICY</h3>
+                </li>
+
+                <li id="h.3dy6vkm"><span>Privacy policy</span>
+
+                    <ol class="c2 lst-kix_list_4-1 start" start="1">
+                        <li><span>We respect your privacy and will take reasonable measures to protect it, as more fully detailed below.</span>
+                        </li>
+                        <li><span>Should you decide to register as a 
+user via the App or Telephone Service, we may require you to provide us 
+with personal information which identifies you. This includes but is not
+ limited to -</span>
+                            <ol class="c2 lst-kix_list_4-2 start" start="1">
+                                <li class="c9"><span>your name and surname;</span></li>
+                                <li class="c9"><span>your email address;</span></li>
+                                <li class="c9"><span>your physical address;</span></li>
+                                <li class="c9"><span>your identity number;</span></li>
+                                <li class="c9"><span>your mobile number; </span></li>
+                                <li class="c9"><span>your date of birth; and</span></li>
+                                <li class="c9"><span>your gender.</span></li>
+                            </ol>
+                        </li>
+
+                        <li id="h.1t3h5sf"><span>Should your personal 
+information change, please inform us and provide us with updates to your
+ personal information as soon as reasonably possible to enable us to 
+update your personal information.</span>
+                        </li>
+                        <li><span>You may choose to provide additional 
+personal information to us, in which event you agree to provide accurate
+ and current information, and not to impersonate or misrepresent any 
+person or entity or falsely state or otherwise misrepresent your 
+affiliation with anyone or anything.</span>
+                        </li>
+                        <li><span>Subject to clause 13.6 below, we will not, without your express consent:</span>
+                            <ol class="c2 lst-kix_list_4-2 start" start="1">
+                                <li class="c16"><span>use your personal information for any purpose other than as set out below:</span>
+                                    <ol class="c2 lst-kix_list_4-3 start" start="1">
+                                        <li class="c14">
+                                            <span>in relation to the ordering, sale and delivery of Food;</span></li>
+                                        <li class="c14"><span>to contact
+ you regarding current or new Food items or services or any other goods 
+offered via the App or Telephone Service (unless you have opted out from
+ receiving marketing material from us);</span>
+                                        </li>
+                                        <li class="c14"><span>to inform 
+you of new features, special offers and promotional competitions offered
+ by us or any of our franchisees, divisions, partners and/or Restaurants
+ (unless you have opted out from receiving marketing material from us); 
+and</span>
+                                        </li>
+                                        <li class="c14"><span>to improve
+ our product selection and your experience of our App or Telephone 
+Service by, for example, monitoring your browsing habits, or tracking 
+your sales on the App; or</span>
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li class="c16"><span>disclose your personal information to any third party other than as set out below:</span>
+                                    <ol class="c2 lst-kix_list_4-3 start" start="1">
+                                        <li class="c14"><span>to our 
+employees, franchisees, third party service providers and Restaurants 
+who assist us to interact with you via our App, Telephone Service, email
+ or any other method, for the ordering of Food or when delivering Food 
+to you (i.e. Courier Delivery or Self-collection), and thus need to know
+ your personal information in order to assist us to communicate with you
+ properly and efficiently;</span>
+                                        </li>
+                                        <li class="c14"><span>to our 
+franchisees, divisions, partners and/or Restaurants (including their 
+employees and/or third party service providers) in order for them to 
+interact directly with you via email or any other method for purposes of
+ sending you marketing material regarding any current or new Food items 
+or services, new features, special offers or promotional items offered 
+by them (unless you have opted out from receiving marketing material 
+from us);</span>
+                                        </li>
+                                        <li class="c14"><span>to law 
+enforcement, government officials, fraud detection agencies or other 
+third parties when we believe in good faith that the disclosure of 
+personal information is necessary to prevent physical harm or financial 
+loss, to report suspected illegal activity, or to investigate violations
+ of these Terms and Conditions;</span>
+                                        </li>
+                                        <li class="c14"><span>to our 
+service providers (under contract with us) who help with parts of our 
+business operations (fraud prevention, marketing, technology services 
+etc). However, our contracts dictate that these service providers may 
+only use your information in connection with the services they perform 
+for us and not for their own benefit; and</span>
+                                        </li>
+                                        <li class="c14"><span>to our 
+franchisees, third party service providers and/or Restaurants in order 
+for them to liaise directly with you in the event of you submitting a 
+complaint or claim regarding any order you have placed which requires 
+their involvement.</span>
+                                        </li>
+                                    </ol>
+                                </li>
+
+                            </ol>
+                        </li>
+                        <li id="h.4d34og8"><span>We are entitled to use 
+or disclose your personal information if such use or disclosure is 
+required in order to comply with any applicable law, subpoena, order of 
+court or legal process served on us, or to protect and defend our rights
+ or property. </span>
+                            <strong>Mr Delivery undertakes never to sell or make your personal information available to
+                                any third party other than as provided for in this Privacy Policy, unless we are
+                                compelled to do so by law. In particular, in the event of a fraudulent online payment,
+                                Mr Delivery is entitled to disclose relevant personal information for criminal
+                                investigation purposes or in line with any other legal obligation for disclosure of the
+                                personal information which may be required of it.</strong>
+                        </li>
+                        <li><span>We will ensure that all of our 
+employees, franchisees, third party service providers, divisions, 
+partners and Restaurants (including their employees and third party 
+service providers) having access to your personal information are bound 
+by appropriate and legally binding confidentiality obligations in 
+relation to such information.</span>
+                        </li>
+                        <li><span>We will -</span>
+                            <ol class="c2 lst-kix_list_4-2 start" start="1">
+                                <li class="c9"><span>treat your personal
+ information as strictly confidential, save where we are entitled to 
+share it as set out in this Privacy Policy;</span>
+                                </li>
+                                <li class="c9"><span>take appropriate 
+technical and organisational measures to ensure that your personal 
+information is kept secure and is protected against unauthorised or 
+unlawful processing, accidental loss, destruction or damage, alteration,
+ disclosure or access;</span>
+                                </li>
+                                <li class="c9"><span>provide you with access to your personal information to view and/or update personal details;</span>
+                                </li>
+                                <li class="c9"><span>promptly notify you if we become aware of any unauthorised use, disclosure or processing of your personal information;</span>
+                                </li>
+                                <li class="c9"><span>provide you with 
+reasonable evidence of our compliance with our obligations under this 
+Privacy Policy on reasonable notice and request; and</span>
+                                </li>
+                                <li class="c9"><span>upon your request, 
+promptly return or destroy any and all of your personal information in 
+our possession or control, save for that which we are legally obliged to
+ retain.</span>
+                                </li>
+                            </ol>
+                        </li>
+                        <li><span>We will not retain your personal 
+information longer than the period for which it was originally needed, 
+unless we are required by law to do so or you consent to us retaining 
+such information for a longer period.</span>
+                        </li>
+                        <li><strong>Whilst we will do all things reasonably necessary to protect your rights of privacy,
+                            we cannot guarantee or accept any liability whatsoever for unauthorised or unlawful
+                            disclosures of your personal information, whilst in our possession, made by third parties
+                            who are not subject to our control, unless such disclosure is as a result of our gross
+                            negligence.</strong>
+                        </li>
+                        <li><strong>If you disclose your personal information to a third party, such as an entity which
+                            operates a website linked to the App or anyone other than Mr Delivery, MR DELIVERY SHALL NOT
+                            BE LIABLE FOR ANY LOSS OR DAMAGE, HOWSOEVER ARISING, SUFFERED BY YOU AS A RESULT OF THE
+                            DISCLOSURE OF SUCH INFORMATION TO THE THIRD PARTY. This is because we do not regulate or
+                            control how that third party uses your personal information. You should always ensure that
+                            you read the privacy policy of any third party.</strong>
+
+                        </li>
+
+
+                    </ol>
+                    <h3>PART C – GENERAL LEGAL TERMS</h3>
+                </li>
+
+                <li><span>Changes to these Terms and Conditions</span>
+
+                    <ol class="c2 lst-kix_list_4-1 start" start="1">
+                        <li><span>Mr Delivery may, in its sole 
+discretion, change any of these Terms and Conditions at any time. It is 
+your responsibility to regularly check these Terms and Conditions and 
+make sure that you are satisfied with the changes. Should you not be 
+satisfied, you must not place any further orders on, or in any other way
+ use, the App or Telephone Service.</span>
+                        </li>
+                        <li><span>Any such change will only apply to 
+your use of the App or Telephone Service after the change is displayed 
+in these Terms and Conditions. If you use the App or Telephone Service 
+after such amended Terms and Conditions have been displayed, you will be
+ deemed to have accepted such changes.</span>
+                        </li>
+                    </ol>
+                </li>
+
+                <li><span>Electronic communications</span>
+
+                    <p class="c22"><span>When you use the App or 
+Telephone Service, or send emails to us, you consent to receiving 
+communications from us or any of our divisions or partners 
+electronically in accordance with our Privacy Policy as set out in Part B
+ above.</span>
+                    </p>
+
+                </li>
+
+
+                <li><span>Ownership and copyright</span>
+
+                    <ol class="c2 lst-kix_list_4-1 start" start="1">
+                        <li><span>The contents of the App, including any
+ material, information, data, software, icons, text, graphics, lay-outs,
+ images, sound clips, advertisements, video clips, trade names, logos, 
+trade-marks, designs and service marks which are displayed on or 
+incorporated in the App (“</span><strong>App Content</strong><span>”) 
+are protected by law, including but not limited to copyright and trade 
+mark law. The App Content is the property of Mr Delivery, its 
+advertisers and/or sponsors, and/or is licensed to Mr Delivery.</span>
+                        </li>
+                        <li>
+                            <span>You will not acquire any right, title or interest in or to the App or the App Content.</span>
+                        </li>
+                        <li><span>Any use, distribution or reproduction 
+of the App Content is prohibited unless expressly authorised by an 
+authorised Mr Delivery representative or otherwise provided for in law. 
+To obtain permissions for the commercial use of any App Content, 
+e-mail&nbsp;</span><span class="c0 c5 c25"><a class="c21" rel="nofollow" href="mailto:info@mrdfood.com">info@mrdfood.com</a></span><span>. </span></li>
+                        <li><span>Where any of the App Content has been 
+licensed to Mr Delivery or belongs to any third party, your rights of 
+use will also be subject to any terms and conditions which that licensor
+ or third party imposes from time to time and you agree to comply with 
+such third party terms and conditions which are notified to you as being
+ applicable.</span>
+                        </li>
+                    </ol>
+                </li>
+                <li><span>Disclaimer</span>
+                    <ol class="c2 lst-kix_list_4-1 start" start="1">
+                        <li><strong>The use of the App or Telephone Service is entirely at your own risk and you assume
+                            full responsibility for any risk or loss resulting from such use or reliance on any
+                            information on the App or communicated via the Telephone Service.</strong>
+                        </li>
+                        <li><span>Whilst Mr Delivery takes reasonable 
+measures to ensure that the content of the App or as communicated via 
+the Telephone Service is accurate and complete, Mr Delivery makes no 
+representations or warranties, whether express or implied, as to the 
+quality, timeliness, operation, integrity, availability or functionality
+ of the App or Telephone Service, or as to the accuracy, completeness or
+ reliability of any information on the App or communicated via the 
+Telephone Service. If any such representations or warranties are made by
+ Mr Delivery’s representatives, Mr Delivery shall not be bound thereby.</span>
+                        </li>
+                        <li><strong>Mr Delivery disclaims liability for all damage, loss or expense, whether direct,
+                            indirect or consequential in nature, arising out of or in connection with your access to or
+                            use of the App or Telephone Service and/or any content therein, unless otherwise provided by
+                            law.</strong>
+                        </li>
+                        <li><span>Any views or statements made or 
+expressed on the App or via the Telephone Service are not necessarily 
+the views of Mr Delivery, its directors, employees and/or agents.</span>
+                        </li>
+                        <li><strong>In addition to the disclaimers contained elsewhere in these Terms and Conditions, Mr
+                            Delivery also makes no warranty or representation, whether express or implied, that the
+                            information or files available on the App are free of viruses, spyware, malware, trojans,
+                            destructive materials or any other data or code which is able to corrupt, destroy,
+                            compromise, disrupt, disable, harm, jeopardise or otherwise impede in any manner the
+                            operation, stability, security functionality or content of your computer system, computer
+                            network, hardware or software in any way. You accept all risk associated with the existence
+                            of such viruses, destructive materials or any other data or code which is able to corrupt,
+                            compromise, jeopardise, disrupt, disable, harm or otherwise impede in any manner the
+                            operation or content of a computer system, computer network, any handset or mobile device,
+                            or your hardware or software, save where such risks arise due to the gross negligence or
+                            wilful misconduct of Mr Delivery, its employees, agents or authorised representatives. Mr
+                            Delivery thus disclaims all liability for any damage, loss or liability of any nature
+                            whatsoever arising out of or in connection with your access to or use of the App. </strong>
+                        </li>
+                    </ol>
+                </li>
+                <li><span>Linked third party websites</span>
+                    <ol class="c2 lst-kix_list_4-1 start" start="1">
+                        <li><span>The App may contain links or references to other websites (“</span><strong>Third Party Websites</strong><span>”)
+ which are outside of our control, including those of advertisers. These
+ Terms and Conditions do not apply to those Third Party Websites and Mr 
+Delivery is not responsible for the practices and/or privacy policies of
+ those Third Party Websites or the “cookies”
+                            that those sites may use.</span></li>
+                        <li><strong>Notwithstanding the fact that the App may refer to or provide links to Third Party
+                            Websites, your use of such Third Party Websites is entirely at your own risk and we are not
+                            responsible for any loss, expense, claim or damage, whether direct, indirect or
+                            consequential, arising from your use of such Third Party Websites or your reliance on any
+                            information contained thereon.</strong>
+                        </li>
+                    </ol>
+                </li>
+                <li><span>Limitation of liability</span>
+
+                    <ol class="c2 lst-kix_list_4-1 start" start="1">
+                        <li><strong>Mr Delivery cannot be held liable for any inaccurate information published on the
+                            App or communicated via the Telephone Service and/or any incorrect prices displayed on the
+                            App or communicated via the Telephone Service, save where such liability arises from the
+                            gross negligence or wilful misconduct of Mr Delivery, its employees, agents or authorised
+                            representatives. You are encouraged to contact us to report any possible malfunctions or
+                            errors by way of email to <a rel="nofollow" href="mailto:info@mrdfood.com">info@mrdfood.com</a> or by phone at 0861
+                            85 85 85.</strong>
+                        </li>
+                        <li><strong>MR DELIVERY SHALL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL OR
+                            CONSEQUENTIAL LOSS OR DAMAGES WHICH MIGHT ARISE FROM YOUR USE OF, OR RELIANCE UPON, THE APP
+                            OR TELEPHONE SERVICE, OR THE CONTENT CONTAINED IN THE APP OR COMMUNICATED VIA THE TELPHONE
+                            SERVICE; OR YOUR INABILITY TO USE THE APP OR TELEPHONE SERVICE, AND/OR UNLAWFUL ACTIVITY ON
+                            THE APP OR TELEPHONE SERVICE, AND/OR ANY LINKED THIRD PARTY WEBSITE OR MOBILE APPLICATION.
+                            &nbsp;SHOULD IT BE FOUND THAT MR DELIVERY IS LIABLE TO YOU, SUCH LIABILITY SHALL BE LIMITED
+                            TO THE ORDER CHARGES RELATING TO YOUR PARTICULAR ORDER. </strong>
+                        </li>
+                        <li><strong>YOU HEREBY INDEMNIFY MR DELIVERY AGAINST ANY LOSS, CLAIM OR DAMAGE WHICH MAY BE
+                            SUFFERED BY YOURSELF OR ANY THIRD PARTY ARISING IN ANY WAY FROM YOUR USE OF THE APP,
+                            TELEPHONE SERVICE AND/OR ANY LINKED THIRD PARTY WEBSITE OR MOBILE APPLICATION.</strong>
+                        </li>
+                    </ol>
+                </li>
+                <li><span>Availability and termination</span>
+
+                    <ol class="c2 lst-kix_list_4-1 start" start="1">
+                        <li><span>We will use reasonable endeavours to 
+maintain the availability of the App and Telephone Service, except 
+during scheduled maintenance periods, but are entitled at any time to 
+discontinue providing the App or Telephone Service, or any part thereof 
+with or without notice to you.</span>
+                        </li>
+                        <li><strong>Mr Delivery may in its sole discretion terminate, suspend and modify the App and/or
+                            Telephone Service, with or without notice to you. You agree that Mr Delivery will not be
+                            liable to you in the event that it chooses to suspend, modify or terminate the App or
+                            Telephone Service, other than for processing any orders made by you prior to such time, to
+                            the extent possible. </strong>
+                        </li>
+                        <li><strong>If you fail to comply with your obligations under these Terms and Conditions,
+                            including any incident involving payment of the price of an order for any Food, this may (in
+                            our sole discretion with or without notice to you) lead to a suspension and/or termination
+                            of your access to the App or Telephone Service, without any prejudice to any claims for
+                            damages or otherwise that we may have against you.</strong>
+                        </li>
+                        <li><strong>Mr Delivery is entitled, for purposes of preventing suspected fraud and/or where it
+                            suspects that you are abusing the App or Telephone Service and/or have created multiple user
+                            profiles to take advantage of a promotion or Coupon intended by Mr Delivery to be used
+                            once-off by you, to blacklist you on its database (including suspending or terminating your
+                            access to the App or Telephone Service), refuse to accept or process payment on any order,
+                            and/or to cancel any order concluded between you and Mr Delivery, in whole or in part, on
+                            notice to you. Mr Delivery shall only be liable to refund monies already paid by you, and
+                            accepts no other liability which may arise as a result of such blacklisting and/or refusal
+                            to process any order.</strong>
+                        </li>
+                        <li><span>At any time, you can choose to stop using the App or Telephone Service, with or without notice to Mr Delivery.</span>
+                        </li>
+                    </ol>
+                </li>
+                <li class="c18" id="h.2s8eyo1"><span>Force majeure events</span>
+
+                    <ol class="c2 lst-kix_list_4-1 start" start="1">
+                        <li><span>As between you and Mr Delivery, you 
+and any Courier, or you and any Restaurant, no party will be liable to 
+any other party for any delay or failure in performing its obligations 
+(excluding payment obligations) in terms of these Terms and Conditions 
+due to an event beyond its control, including but not limited to, an act
+ of God, fire, flood, earthquake or war. &nbsp;</span>
+                        </li>
+                    </ol>
+                </li>
+
+                <li><span>Governing law and jurisdiction</span>
+
+                    <ol class="c2 lst-kix_list_4-1 start" start="1">
+                        <li><span>These Terms and Conditions, the 
+relationship between you and Mr Delivery, any Restaurant or any Courier,
+ and/or any dispute arising from or in connection with these Terms and 
+Conditions shall be governed and interpreted in accordance with the laws
+ of the Republic of South Africa. Your continued use of the App or 
+Telephone Service will constitute your consent and submission to the 
+jurisdiction of the South African courts regarding all proceedings, 
+transactions, applications or the like instituted by either party 
+against the other, arising from any of these Terms and Conditions.</span>
+                        </li>
+                        <li><span>In the event of any dispute arising 
+between you and Mr Delivery, you hereby consent to the non-exclusive 
+jurisdiction of the High Court of the Republic of South Africa (Western 
+Cape Division, Cape Town) notwithstanding that the quantum in the action
+ or proceedings may otherwise fall below the monetary jurisdiction of 
+that court.</span>
+                        </li>
+                        <li><span>Nothing in this clause 22 or the Terms
+ and Conditions limits your right to approach any court, tribunal or 
+forum of competent jurisdiction in terms of the CPA.</span>
+                        </li>
+                    </ol>
+                </li>
+
+                <li><span>Notices</span>
+
+                    <ol class="c2 lst-kix_list_4-1 start" start="1">
+                        <li><span>Mr Delivery hereby selects 12th floor, 10 Rua Vasco da Gama Plain, Foreshore, Cape Town (with a copy to </span><span class="c0 c5 c25"><a class="c21" rel="nofollow" href="mailto:legal@takealot.com">legal@takealot.com</a></span><span>,
+ which copy must be given in order for notice to be validly given) as 
+its address for the service of all formal notices and legal processes in
+ connection with these Terms and Conditions (“</span><strong>legal address</strong><span>”). Mr Delivery may change this address from time to time by updating these Terms and Conditions. </span>
+                        </li>
+                        <li><span>You hereby select the email address 
+and any delivery address specified with your orders as your legal 
+address, but you may change it by giving Mr Delivery not less than 7 
+days’
+                            notice in writing.</span></li>
+                        <li><span>Notices must be sent either by hand, prepaid registered post or email and must be in English. All notices sent -</span>
+                            <ol class="c2 lst-kix_list_4-2 start" start="1">
+                                <li class="c9"><span>by hand will be deemed to have been received on the date of delivery;</span>
+                                </li>
+                                <li class="c9"><span>by prepaid registered post, will be deemed to have been received 10 days after the date of posting; and</span>
+                                </li>
+                                <li class="c9"><span>by email before 
+16h30 on a business day will be deemed to have been received, on the 
+date of successful transmission of the email. All emails sent after 
+16h30 or on a day which is not a business day will be deemed to have 
+been received on the following business day, unless the contrary is 
+proved.</span>
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                </li>
+
+
+                <li><span>Information</span>
+
+                    <p class="c24"><span>For the purposes of the 
+                    Electronic Communications and Transactions Act 2002, Mr Delivery’s 
+                    information is as follows, which should be read in conjunction with its 
+                    product descriptions and other terms and conditions contained on the 
+                    App:</span>
+                    </p>
+
+                    <ol>
+                        <li><strong>Full name</strong><span>: Mr Delivery (Pty) Ltd, a private company registered in South Africa with registration number 1992/04664/07.</span>
+                        </li>
+                        <li><strong>Main business</strong><span>: Food ordering and courier service</span>
+                        </li>
+                        <li><strong>Physical address for receipt of legal service (also postal and street address)</strong><span>: 12th floor, 10 Rua Vasco da Gama Plain, Foreshore, Cape Town (marked for attention: CEO and Legal), with a copy to </span><span class="c0 c5 c25"><a class="c21" rel="nofollow" href="mailto:legal@takealot.com">legal@takealot.com</a></span><span>, which copy must be given in order for notice to be validly given</span></li>
+                        <li><strong>Office bearers</strong><span>: Kim Reid, Gary Altini</span></li>
+                        <li><strong>Phone number</strong><span>: +27 87&nbsp;820 5058</span></li>
+                        <li><strong>Official email address</strong><span>: </span><span class="c0 c5 c25"><a class="c21" rel="nofollow" href="mailto:info@mrdfood.com">info@mrdfood.com</a></span></li>
+                        <li><strong>PAIA</strong><span>: The manual published in terms of section 51 of the Promotion of Access to Information Act 2000 may be downloaded from </span><a rel="nofollow" href="https://takealot.s3.amazonaws.com/static/cms/Takealot_Section+51+PAIA+Manual.pdf" target="_blank">here</a><span>. </span></li>
+                    </ol>
+
+                    <p class="c24"><span>Restaurants’ information is 
+available in the relevant Product listing and/or via the customer 
+support center contactable at 0861 85 85 85. </span>
+                    </p>
+
+                </li>
+
+                
+                
+                <li><span>General</span>
+
+                    <ol>
+                        <li><span>Kamogelo Foundations may, in its sole 
+discretion, at any time and for any reason and without prior written 
+notice, suspend or terminate the operation of the App or Telephone 
+Service, or the user’s right to use the App or Telephone Service, or any
+ of its contents, subject to us processing any orders then already made 
+by you.</span>
+                        </li>
+                        <li><span>You may not cede, assign or otherwise 
+transfer your rights and obligations in terms of these Terms and 
+Conditions to any third party.</span>
+                        </li>
+                        <li><span>Any failure on the part of you or Mr Delivery to enforce any right in terms hereof shall not constitute a waiver of that right.</span>
+                        </li>
+                        <li><span>If any term or condition contained 
+herein is declared invalid, the remaining terms and conditions will 
+remain in full force and effect.</span>
+                        </li>
+                        <li><span>No variation, addition, deletion, or 
+agreed cancellation of the Terms and Conditions will be of any force or 
+effect unless in writing and accepted by or on behalf of the parties 
+hereto.</span>
+                        </li>
+                        <li><span>No indulgence, extension of time, relaxation or latitude which either you or Mr Delivery (the “</span><strong>grantor</strong><span>”) may show, grant or allow to the other of them (the “</span><strong>grantee</strong><span>”)
+ shall constitute a waiver by the grantor of any of the grantor’s rights
+ and the grantor shall not thereby be prejudiced or stopped from 
+exercising any of its rights against the grantee which may have arisen 
+in the past or which might arise in the future.</span>
+                        </li>
+                        <li><span>These Terms and Conditions contain the
+ whole agreement between you and Mr Delivery and no other warranty or 
+undertaking is valid, unless contained in this document.</span>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+
+
+            <!-- End Gdoc "Save as HTML" -->
+        </div>
+    </section>
+
+          </div>
+      
+      
+     
+      <div th:replace="/fragments/nfooter :: nfooter"/>
+
+      <!--  Scripts-->
+      <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script src="js/materialize.js" th:src="@{/js/materialize.js}"></script>
+      <script src="js/init.js" th:src="@{/js/init.js}"></script>
+  
+    </body>
+</html>

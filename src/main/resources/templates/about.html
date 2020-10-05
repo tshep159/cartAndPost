@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title th:text="'Kamogelo Foundations - ' + ${title}">FixMyPlace | Home</title>
+
+        <!-- CSS  -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  th:href="@{https://fonts.googleapis.com/icon?family=Material+Icons}" rel="stylesheet"/>
+        <link href="../css/materialize.css" th:href="@{/css/materialize.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="../css/style.css" th:href="@{/css/style.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="../css/style.css" th:href="@{/css/main.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="../css/style.css" th:href="@{/css/myapp.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+        <link rel="shortcut icon" href="wtw.jpg" th:href="@{/img/fav.jpg}"/>
+
+    </head>
+    <body class="mee">
+
+        <div class="se-pre-con"></div>
+        <nav class=" white darken-3" role="navigation">
+            <div class="nav-wrapper container">
+
+
+                <a id="logo-container" href="#" class="brand-logo black-text" th:href="@{/}"><img  th:src="@{/img/logo.jpg}" alt="Kamogelo Foundations" style="height:65px;"/></a>
+                <ul class="right hide-on-med-and-down">
+                    <li  role="presentation"><a class="black-text" th:href="@{/login}">Sign In</a></li>
+                    <li role="presentation"><a class="black-text" th:href="@{/registration}">Sign Up</a></li>
+                    <li class="active black-text" role="presentation"><a class="black-text" th:href="@{/about}">About Us</a></li>
+                    <li role="presentation"><a class="black-text" th:href="@{/faq}">FAQ</a></li>
+                </ul>
+
+                <ul id="nav-mobile" class="sidenav white darken-3">
+                    <li  role="presentation"><a class="black-text" th:href="@{/login}">Sign In</a></li>
+                    <li role="presentation"><a class="black-text" th:href="@{/registration}">Sign Up</a></li>
+                    <li class="active black-text" role="presentation"><a class="black-text" th:href="@{/about}">About Us</a></li>
+                    <li role="presentation"><a class="black-text" th:href="@{/faq}">FAQ</a></li>
+                </ul>
+                <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons black-text">menu</i></a>
+            </div>
+        </nav>
+
+
+
+        <div class="container post">
+            <div class="row">
+
+                <!--   Icon Section   -->
+                <div class="row card">
+                    <br/>
+                    <hr class="brown-text"/>
+                    <h1 class="normal-txt teal-text">Meet The Team</h1>
+                    <hr class="brown-text"/>
+
+                    <br/>
+                    <div class="col m12 m4">
+                        <div class="icon-block center">
+                            <img th:src="@{/img/app_n.jpg}" alt="" class="rounded" width="1200px" height="1200px"/>
+                            <h5 class="center">Keketsi Samuel Matlawa</h5>
+
+                            <p class="light">Founder </p>
+                        </div>
+                    </div>
+                    <!--   
+                    <div class="col m4 m4">
+                 <div class="icon-block center ">
+                   <img th:src="@{/img/1.jpg}" alt="" class="rounded" width="1200px" height="1200px"/>
+                   <h5 class="center">Dineo Maema</h5>
+       
+                   <p class="light">Director | Strategy and Business Development</p>
+                 </div>
+               </div>
+                       
+                          <div class="col m4 m4">
+                 <div class="icon-block center">
+                   <img th:src="@{/img/1.jpg}" alt="" class="rounded" width="1200px" height="1200px"/>
+                   <h5 class="center">Dineo Maema</h5>
+       
+                   <p class="light">Director | Strategy and Business Development</p>
+                 </div>
+               </div>
+                 
+                       
+                          <div class="col m4 m4">
+                 <div class="icon-block center">
+                   <img th:src="@{/img/1.jpg}" alt="" class="rounded" width="1200px" height="1200px"/>
+                   <h5 class="center">Tshepo Maema</h5>
+       
+                   <p class="light">Marketing Strategist</p>
+                 </div>
+               </div>
+                       
+                       
+                       <div class="col m12 m4 center">
+                 <div class="icon-block center">
+                   <img th:src="@{/img/1.jpg}" alt="" class="rounded" width="1200px" height="1200px"/>
+                   <h5 class="center">Tshepo Maema</h5>
+       
+                   <p class="light">Director | Strategy and Business Development</p>
+                 </div>
+               </div>
+                       
+                    -->
+
+
+                </div>
+
+
+
+
+
+            </div>
+
+            <div class="modal fade" role="dialog" tabindex="-1">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            <h4 class="modal-title">Modal Title</h4></div>
+                        <div class="modal-body">
+                            <p>The content of your modal.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
+                            <button class="btn btn-primary" type="button">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div th:replace="/fragments/nfooter :: nfooter"/>
+
+        <!--  Scripts-->
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="js/materialize.js" th:src="@{/js/materialize.js}"></script>
+        <script src="js/init.js" th:src="@{/js/init.js}"></script>
+
+    </body>
+
+</html>

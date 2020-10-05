@@ -1,0 +1,283 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <!--<title>Spring Boot Thymeleaf + Spring Security</title>-->
+
+    <div th:replace="/fragments/header :: header-css"/>
+    <title th:text="'Kamogelo Foundations - ' + ${title}">>FixMyPlace | Home</title>  <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  th:href="@{https://fonts.googleapis.com/icon?family=Material+Icons}" rel="stylesheet"/>
+    <link href="../css/materialize.css" th:href="@{/css/materialize.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="../css/style.css" th:href="@{/css/style.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="../css/materialize.css" th:href="@{/css/default.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+   
+    <link rel="shortcut icon"  th:href="@{/img/fav.jpg}"/>
+    <link href="../css/style.css" th:href="@{/css/main.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+</head>
+<body class="mee">
+
+    <div class="se-pre-con"></div>
+    <nav class="white darken-3" role="navigation">
+        <div class="nav-wrapper container">
+
+            <a id="logo-container" href="#" class="brand-logo black-text" th:href="@{/}"><img  th:src="@{/img/logo.jpg}" alt="Kamogelo Foundations" style="height:65px;"/></a>
+            <ul class="right hide-on-med-and-down">
+                <li  role="presentation"><a class="black-text" th:href="@{/login}">Sign In</a></li>
+                <li class="active" role="presentation"><a class="black-text" th:href="@{/registration}">Sign Up</a></li>
+                <li role="presentation"><a class="black-text" th:href="@{/about}">About Us</a></li>
+                <li role="presentation"><a class="black-text" th:href="@{/faq}">FAQ</a></li>
+            </ul>
+
+            <ul id="nav-mobile" class="sidenav white darken-3">
+                <li  role="presentation"><a class="black-text" th:href="@{/login}">Sign In</a></li>
+                <li class="active" role="presentation"><a class="black-text" th:href="@{/registration}">Sign Up</a></li>
+                <li role="presentation"><a class="black-text" th:href="@{/about}">About Us</a></li>
+                <li role="presentation"><a class="black-text" th:href="@{/faq}">FAQ</a></li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons black-text">menu</i></a>
+        </div>
+    </nav>
+    <br/>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12 m8">
+                <div class="card white darken-1">
+                    <div class="card-content black-text">
+
+                        <form autocomplete="off" action="#" th:action="@{/registration}"
+                              th:object="${user}" method="post" class="form-horizontal register"
+                              enctype="multipart/form-data"
+                              role="form">
+        
+                <legend>Account Details
+                </legend>
+
+                            <div class="row" th:if="${not #lists.isEmpty(successMessage)}">			
+                                <div class="col-xs-8 col-md-offset-2 col-md-8">			
+                                    <div class="alert alert-primary green fade in">
+
+                                        <h5 class="white-text" th:utext="${successMessage}"></h5></div>				
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+
+
+                                <div  class="input-field">
+
+                                    <label for="fn">First Name</label><br/>
+                                    <span  th:if="${#fields.hasErrors('first_name')}" th:errors="*{first_name}"
+                                           class="red-text"></span>
+                                    <input type="text"   id="fn" th:field="*{first_name}"
+                                           class="validate"/>
+
+
+
+                                </div>
+                            </div>
+
+                            <div class="input-field">
+                                <label for="ln">Last Name</label>
+                                <br/><span	th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"
+                                           class="red-text"></span>
+
+                                <input type="text" id="ln" th:field="*{lastName}"
+                                       class="validate" />
+
+
+                            </div>
+                            
+                            
+                            <div class="input-field">
+                                <label for="e">Email</label>
+                                <br/><span	th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
+                                           class="red-text"></span>
+
+                                <input type="text" id="e" th:field="*{email}"
+                                       class="validate" />
+                                
+                                <span class="helper-text"  data-success="Email seems to be correct"></span>
+
+
+                            </div>
+
+                            <div class="input-field">
+                                <label for="number">ID Number</label><br/>
+                                    <br/><span	th:if="${#fields.hasErrors('idNumber')}" th:errors="*{idNumber}"
+                                           class="red-text"></span>
+
+                                <input type="number" id="number" th:field="*{idNumber}"
+                                       class="validate" />
+                                
+                                <span class="helper-text"  data-success="ID seems to be correct"></span>
+
+
+                            </div>
+
+
+                            <div class="input-field">
+                                <label for="pw">Password</label>
+                                <br/>
+                                <span
+                                    th:if="${#fields.hasErrors('password')}" th:errors="*{password}"
+                                    class="red-text"></span>
+                                <input type="password" id="pw" th:field="*{password}"
+                                       class="form-control input-lg" />
+
+
+                            </div>
+
+
+                            <div class="input-field">
+
+                                <label for="cn">Contact Number</label><br/>
+                                <span
+                                    th:if="${#fields.hasErrors('contactNumber')}" th:errors="*{contactNumber}"
+                                    class="red-text"></span>
+                                <input type="number" id="cn" th:field="*{contactNumber}" 
+                                       class="validate"/>
+                                <span class="helper-text" data-error="Please enter numbers only!" data-success="Contact Number seems to be correct"></span>
+
+
+                            </div>
+
+
+
+
+                            <div class="input-field">
+                                <label for="un">Username</label><br/>
+                                <span
+                                    th:if="${#fields.hasErrors('username')}" th:errors="*{username}"
+                                    class="red-text"></span>
+                                <input type="text" id="un" th:field="*{username}"
+                                       class="form-control input-lg"/>
+                                   </div>
+
+                            <br/>
+
+
+
+         <legend>Address Information
+                </legend>
+
+                            <div class="input-field">
+                                <label for="l1">Line One</label><br/>
+                                <span th:if="${#fields.hasErrors('addressLineOne')}" th:errors="*{addressLineOne}"
+                                      class="red-text"></span>
+                                <input type="text" id="l1" th:field="*{addressLineOne}"
+                                       class="form-control input-lg" />
+
+
+                            </div>
+
+                            <div class="input-field">
+                                <label for="l2">Line Two</label>
+                                <br/>
+                                <span
+                                    th:if="${#fields.hasErrors('addressLineTwo')}" th:errors="*{addressLineTwo}"
+                                    class="red-text"></span>
+
+                                <input type="text" id="l2" th:field="*{addressLineTwo}"
+                                       class="form-control input-lg" />
+
+
+                            </div>
+
+
+                            <div class="input-field">
+                                <label for="city">Suburb</label>
+                                <br/>
+                                <span
+                                    th:if="${#fields.hasErrors('city')}" th:errors="*{city}"
+                                    class="red-text"></span>
+
+                                <input type="text" id="city" th:field="*{city}"
+                                       class="form-control input-lg" />
+
+
+
+                            </div>
+
+
+                            <div class="input-field">
+                                <label for="zip">Zip Code</label><br/>
+                                <span
+                                    th:if="${#fields.hasErrors('postalCode')}" th:errors="*{postalCode}"
+                                    class="red-text"></span>
+
+                                <input type="text" id="zip" th:field="*{postalCode}"
+                                       class="form-control input-lg" />
+
+
+                            </div>
+
+                <legend>Banking Information
+                </legend>
+
+                            
+                            <div class="input-field">
+                                <label for="bname">Bank Name</label><br/>
+                                    <br/><span	th:if="${#fields.hasErrors('bankName')}" th:errors="*{bankName}"
+                                           class="red-text"></span>
+
+                                <input type="text" id="number" th:field="*{bankName}"
+                                       class="validate" />
+                                
+                                <span class="helper-text"  data-success="Bank Name to be correct"></span>
+
+
+                            </div>
+
+
+
+                            <div class="input-field">
+                                <label for="number">ID Number</label><br/>
+                                    <br/><span	th:if="${#fields.hasErrors('accountNumber')}" th:errors="*{accountNumber}"
+                                           class="red-text"></span>
+
+                                <input type="number" id="number" th:field="*{accountNumber}"
+                                       class="validate" />
+                                
+                                <span class="helper-text"  data-success="Account Number seems to be correct"></span>
+
+
+                            </div>
+              
+                    <div class="infobox"><h4>Helpful Information</h4>
+                    <p>Please provide us with correct information as some of it will be needed when processing payments.
+                        Your honesty will be much appreciated.
+                    </p>
+                </div>
+                            <div class="input-field">
+                                <div><button class="button">Register &raquo;</button></div>
+                            </div>
+
+                      
+                            <br />
+                             <br/><br/><br/><br/><br/> <br/><br/><br/><br/><br/> <br/><br/><br/><br/><br/>
+                        </form>
+
+                        
+                    </div>
+                    <div class="card-action">
+                        <div class="topCushion">Already a member? <a th:href="@{/login}" class="red-text">Sign In</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+    <!-- /.container -->
+    <div th:replace="/fragments/nfooter :: nfooter"/>
+
+    <!--  Scripts-->
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js" th:src="@{/js/materialize.js}"></script>
+    <script src="js/init.js" th:src="@{/js/init.js}"></script>
+
+</body>
+</html>

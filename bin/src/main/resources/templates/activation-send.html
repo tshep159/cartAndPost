@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="/fragments/header :: header-css"/>
+    <title th:text="'Kamogelofoundations - ' + ${title}">> | Home</title>  <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  th:href="@{https://fonts.googleapis.com/icon?family=Material+Icons}" rel="stylesheet"/>
+    <link href="../css/materialize.css" th:href="@{/css/materialize.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="../css/style.css" th:href="@{/css/style.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+ <link rel="shortcut icon" href="wtw.jpg" th:href="@{/img/fav.jpg}"/>
+ <link href="../css/style.css" th:href="@{/css/main.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+</head>
+<body class="mee">
+    
+	<div class="se-pre-con"></div>
+    <nav class="go-nowhere white darken-3" role="navigation">
+          <div class="nav-wrapper container">
+               
+              <a id="logo-container" href="#" class="brand-logo white-text" th:href="@{/}"><img  th:src="@{/img/logo.jpg}" alt="Kamogelo Foundations" style="height:65px;"/></a>
+              <ul class="right hide-on-med-and-down">
+            <li  role="presentation"><a class="brown-text" th:href="@{/login}">Sign In</a></li>
+            <li   role="presentation"><a class="brown-text" th:href="@{/registration}">Sign Up</a></li>
+            <li role="presentation"><a class="brown-text" th:href="@{/about}">About Us</a></li>
+            <li role="presentation"><a class="brown-text" th:href="@{/faq}">FAQ</a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="sidenav white darken-3">
+            <li  role="presentation"><a class="brown-text" th:href="@{/login}">Sign In</a></li>
+            <li   role="presentation"><a class="brown-text" th:href="@{/registration}">Sign Up</a></li>
+            <li role="presentation"><a class="brown-text" th:href="@{/about}">About Us</a></li>
+            <li role="presentation"><a class="brown-text" th:href="@{/faq}">FAQ</a></li>
+        </ul>
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons brown-text">menu</i></a>
+    </div>
+</nav>
+<br/>
+        <form class="form-signin" th:action="@{/user/activation-send}" th:object="${user}" action="/user/activation-send" method="post">
+            <h2 class="form-signin-heading">Re-send Activation</h2>
+            
+            <div class="alert alert-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email error</div>
+            
+            <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email" required="required" autofocus="autofocus"/>
+            
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Send Activation</button>
+        </form>
+  
+<!-- /.container -->
+  <div th:replace="/fragments/nfooter :: nfooter"/>
+
+<!--  Scripts-->
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="js/materialize.js" th:src="@{/js/materialize.js}"></script>
+<script src="js/init.js" th:src="@{/js/init.js}"></script>
+
+</body>
+</html>

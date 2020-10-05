@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="/fragments/header :: header-css"/> <link rel="shortcut icon" href="wtw.jpg" th:href="@{/img/fav.jpg}"/>
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+       <link href="css/font-awesome.min.css" rel="stylesheet" th:href="@{/css/font-awesome.min.css}"/>
+       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css"/>
+       <style>
+           
+           .color-primary {
+  background-color: rgb(103,58,183);
+}
+
+.color-primary--dark {
+  background-color: rgb(81,45,168);  
+}
+
+.color-secondary {
+  background-color: rgb(255,64,129);
+}
+.nav-wrap{
+    margin: opx;
+    padding: 0;
+      height: 180px;  
+          color: #fff;
+        
+         background-color: red; 
+}
+nav-bar {
+  height: 180px;  
+}
+
+nav-bar .brand-logo {
+  padding: 50px;
+}
+
+.tab-bar {
+  height: 65px;
+}
+
+.layout__tab {
+  height: 64px;
+  line-height: 64px;
+  margin: 25px;
+  font-size: 13px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.layout__tab.is-active {
+  border-bottom: 5px solid;
+  padding-bottom: 21px;
+  width: 100%;
+}
+
+.testimonials {
+  display: inline-flex;
+}
+
+.testimonials .section__text {
+  width: 70%;
+}
+
+.section__play-btn {
+  height: 100%;
+  min-height: 250px;
+  background-color: #b2dfdb !important;
+}
+
+.section__play-btn i {
+  font-size: 60px;
+  color: #fff;
+  padding: 95px 104px;
+}
+
+footer.page-footer {
+  padding: 16px 40px;
+  color: #9e9e9e;
+  background-color: #424242;
+}
+
+@media only screen and (max-width: 480px) {
+  footer.page-footer {
+    padding: 16px 10px;
+  }
+}
+
+footer a {
+  color: #9e9e9e;
+}
+
+footer h6 {
+  color: #fff;
+}
+
+       </style>
+</head>
+<body class="mee">
+    
+	<div class="se-pre-con"></div>
+   
+   <nav class="white darken-3" role="navigation">
+          <div class="nav-wrapper container"  >
+             
+              <a id="logo-container" href="#" class="brand-logo brown-text" th:href="@{/}"><img  th:src="@{/img/logo.jpg}" alt="Kamogelo Foundations" style="height:65px;"/></a>
+              <ul class="right hide-on-med-and-down">
+                 <li    role="presentation"><a class="brown-text" th:href="@{/home}">Home</a></li>
+               
+                <li class="active" role="presentation" th:each="u : ${user}"> <a class="brown-text"  th:href="${'/view/user/'+ u.id}">My Quizes</a> </li>
+                 <li role="presentation" sec:authorize="isAuthenticated()"><a class="brown-text"  th:href="@{/checkout}">Begin Quiz</a></li>
+                  <li role="presentation"><a class="brown-text"  th:href="@{/winners}">Winners</a></li>
+                    
+                <li role="presentation"><a class="brown-text" th:href="@{/logout}">Sign Out</a></li>
+            </ul>
+
+            <ul  id="nav-mobile" class="sidenav white darken-3">
+                
+                <li  class="active"  role="presentation"><a class="brown-text" th:href="@{/home}">Home</a></li>
+               
+                <li  class="active" role="presentation" th:each="u : ${user}"> <a class="brown-text"  th:href="${'/view/user/'+ u.id}">My Quizes</a> </li>
+                <li role="presentation" sec:authorize="isAuthenticated()"><a class="brown-text"  th:href="@{/payQuiz}">Begin Quiz</a></li>
+                <li role="presentation"><a class="brown-text"  th:href="@{/winners}">Winners</a></li>
+                    
+                <li role="presentation"><a class="brown-text" th:href="@{/logout}">Sign Out</a></li>
+
+
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons brown-text">menu</i></a>
+        </div>
+    </nav>
+    
+    
+    <nav-bar class="color-primary " th:object="${user}">
+              <input type="hidden" th:field="*{id}"/>
+      <div class="contact-text white">
+          
+          <h4 th:text="'Name :' +${user.first_name}">I am a very simple card. I am good at containing small bits of information..</h4>
+   
+      <h5 th:text="'Surname :'+${user.lastName}"></h5><br/>
+      <h5 th:text="'Street One :'+${user.addressLineOne}"></h5><br/>
+      <h5 th:text="'Street Two :'+${user.addressLineTwo}"></h5><br/>
+      <h5 th:text="'City :'+${user.city}"></h5><br/>
+       <h5 class="red-text" th:text="'Date Joined :'+ ${#dates.format(user.dateJoined, 'dd-MMM-yyyy hh:mm:ss a')}"></h5><br/>
+      
+      
+      
+        <a href="#" class="brand-logo">Name &amp; Title</a>
+      </div>
+    </nav-bar>  
+    <div class="tab-bar  blue center">
+        <a  href="" class="layout__tab " th:text="${user.first_name}"></a>
+      <a href="" class="layout__tab is-active center">Quiz History</a>
+   <a href="" class="layout__tab " th:text=" 'Last Seen '+${user.lastLogin}"></a>
+      <button class="btn-floating btn-large waves-effect waves-light red" id="add">
+        <i class="material-icons" role="presentation">add</i>
+        <span class="visuallyhidden">Add</span>
+      </button>
+    </div>
+    <br></br>
+    <br></br>
+
+    <div th:replace="/fragments/posts :: posts"/>
+
+<!-- /.container -->
+
+<div th:replace="/fragments/footer :: footer"/>
+
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="js/materialize.js" th:src="@{/js/materialize.js}"></script>
+<script src="js/init.js" th:src="@{/js/init.js}"></script>
+
+</body>
+</html>

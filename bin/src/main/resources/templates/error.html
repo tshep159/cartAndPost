@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:text="'Kamogelo Foundations - ' + ${title}">FixMyPlace | Home</title>
+
+        <!-- CSS  -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  th:href="@{https://fonts.googleapis.com/icon?family=Material+Icons}" rel="stylesheet"/>
+        <link href="../css/materialize.css" th:href="@{/css/materialize.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="../css/style.css" th:href="@{/css/style.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link rel="shortcut icon"  th:href="@{/img/fav.jpg}"/>
+
+
+
+
+    </head>
+    <body style='height: 100%;'>
+
+        <div class="se-pre-con"></div>
+        <div th:fragment="header">
+            <!-- this is header -->
+
+
+            <nav class=" white darken-3" role="navigation">
+                <div class="nav-wrapper container">
+                    <a id="logo-container" href="#" class="brand-logo browntext" th:href="@{/}"><img  th:src="@{/img/logo.jpg}" alt="Kamogelo Foundations" style="height:65px;"/></a> 
+                    <ul class="right hide-on-med-and-down brown-text">
+
+                        <li class="active" role="presentation"><a class="brown-text" th:href="@{/}">Home</a></li>
+
+
+
+
+                    </ul>
+
+                    <ul  id="nav-mobile" class="sidenav white darken-3">
+                        <li class="active" role="presentation"><a th:href="@{/}">Home</a></li>
+
+                    </ul>
+                    <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons brown-text">menu</i></a>
+                </div>
+            </nav>
+        </div>
+        <div class="container " style="height: 50%;">
+            <h1 th:if="${errorDescription}"></h1>
+            <h1 th:if="${errorMessage}" th:utext="${errorMessage}">Error java.lang.NullPointerException</h1>
+            <h1 th:if="!${errorMessage}">404 - Page does not exist</h1>
+            <a href="index.html" th:href="@{/}">Back to Home Page</a>
+
+        </div>
+
+
+        <!--  Scripts-->
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="js/materialize.js" th:src="@{/js/materialize.js}"></script>
+        <script src="js/init.js" th:src="@{/js/init.js}"></script>
+
+    </body>
+</html>

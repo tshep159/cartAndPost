@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <link href="css/font-awesome.min.css" rel="stylesheet" th:href="@{/css/font-awesome.min.css}"/>
+
+
+    <div th:replace="/fragments/header :: header-css"/>
+
+</head>
+<body class="mee">
+
+
+    <div class="se-pre-con"></div>
+    <nav class="white darken-3" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="#" class="brand-logo brown-text" th:href="@{/}"><img  th:src="@{/img/logo.jpg}" alt="Kamogelo Foundations" style="height:65px;"/></a>
+            <ul class="right hide-on-med-and-down">
+                <li   role="presentation"><a class="brown-text" th:href="@{/home}">Home</a></li> 
+                
+                <li class="active" role="presentation" sec:authorize="isAuthenticated()"><a class="brown-text" >Begin Quiz</a></li>
+
+                <li  role="presentation"><a class="brown-text"  >Winners</a></li>
+
+
+                <li role="presentation"><a class="brown-text" th:href="@{/logout}">Sign Out</a></li>
+            </ul>
+
+            <ul  id="nav-mobile" class="sidenav white darken-3">
+
+                <li   role="presentation"><a class="brown-text" >Home</a></li> 
+               
+                <li class="active" role="presentation" sec:authorize="isAuthenticated()"><a class="brown-text"  >Begin Quiz</a></li>
+
+                <li  role="presentation"><a class="brown-text" >Winners</a></li>
+
+
+                <li role="presentation"><a class="brown-text" th:href="@{/logout}">Sign Out</a></li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons brown-text">menu</i></a>
+        </div>
+    </nav>
+
+    <h2></h2>
+
+
+    <form  th:action="@{'/new/quiz/'+ ${post.id}}" method="post">
+
+        <center> <h5 class="black-text" > </h5></center>
+
+
+
+
+        <center>   
+
+            <div class="row col-xs-4" th:if="${not #lists.isEmpty(msg)}">			
+                <div class="col-xs-4 col-md-offset-2 col-md-8">			
+                    <div class="alert alert-primary blue white-text fade in"><h5 th:utext="${msg}"></h5></div>				
+                </div>
+            </div>
+
+
+
+
+            <div class="alert-success blue-text" >
+                <h5 th:utext="${score}"></h5>
+
+            </div>                   
+
+
+            <h4 class="cyan-text" th:utext="${info}"></h4>
+            <i class="material-icons cyan-text prefix">textsms</i>
+            <input  type="text" class="center yellow red-text" name="answer" id="answer"  style="width: 25%;" placeholder="answer"/><br/>
+            <input type="hidden" th:field="*{post}"/>
+            <input class="btn center pink bold waves-green" style="width: 28%;" type="submit" value="Submit"/> 
+
+        </center>
+
+        <br/>
+        <br/>
+
+    </form>
+
+
+    <div th:replace="/fragments/footer :: footer"/>
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js" th:src="@{/js/materialize.js}"></script>
+    <script src="js/init.js" th:src="@{/js/init.js}"></script>
+
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="/fragments/header :: header-css"/> <link rel="shortcut icon" href="wtw.jpg" th:href="@{/img/fav.jpg}"/>
+    
+    <title th:text="'Business - ' + ${title}"> | Home</title>
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+       <link href="css/font-awesome.min.css" rel="stylesheet" th:href="@{/css/font-awesome.min.css}"/>
+       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css"/>
+</head>
+<body class="mee">
+    
+	<div class="se-pre-con"></div>
+   
+   <nav class="white darken-3" role="navigation">
+          <div class="nav-wrapper container"  >
+             
+              <a id="logo-container" href="#" class="brand-logo brown-text" th:href="@{/}"><img  th:src="@{/img/l.jpg}" alt="" style="height:65px;"/></a>
+              <ul class="right hide-on-med-and-down">
+                 <li    role="presentation"><a class="brown-text" th:href="@{/home}">Home</a></li>
+               
+                <li class="active" role="presentation" th:each="u : ${user}"> <a class="brown-text"  th:href="${'/view/user/'+ u.id}">Check</a> </li>
+                 
+                <li role="presentation"><a class="brown-text" th:href="@{user/logout}">Sign Out</a></li>
+            </ul>
+
+            <ul  id="nav-mobile" class="sidenav white darken-3">
+   
+   
+                 <li    role="presentation"><a class="brown-text" th:href="@{/home}">Home</a></li>
+               
+                <li class="active" role="presentation" th:each="u : ${user}"> <a class="brown-text"  th:href="${'/view/user/'+ u.id}">Check</a> </li>
+                 
+                <li role="presentation"><a class="brown-text"  href="/user/logout">Sign Out</a></li>
+   
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons brown-text">menu</i></a>
+        </div>
+    </nav>
+    
+
+
+<div class="container" th:object="${cart}">
+  <input type="hidden" th:field="*{id}"/>
+
+
+        <table class="show-cart table">
+          
+          
+    <thead>
+      <tr>
+        <th style="width:50%">Product</th>
+        <th style="width:10%">Price</th>
+        <th style="width:10%"></th>
+      </tr>
+    </thead>
+    <tbody   th:each="user : ${cartLine}">
+      <tr >
+        <td data-th="Product">
+          <div class="row" >
+            <div class="col-sm-2 hidden-xs" th:text="${user.product.name}">Prouctmm</div>
+              <div class="col-sm-10">
+              <p><img style="width: 100px;"
+		th:src="@{'/media/' + ${user.product.image}}"/></p>
+            </div>
+            
+            <div class="col-sm-2 hidden-xs" th:text="${user.product.description}">Prouctmm</div>
+          
+ 
+          </div>
+        </td>
+        <td data-th="Product">
+          <div class="row" >
+           <strong> <div class="col-sm-2 hidden-xs" th:text="'R '+${user.product.unitPrice}">Prouctmm</div></strong>
+            </div>
+ 
+        
+          
+          </td>
+
+      </tr>
+    </tbody>
+
+   <tfoot>
+      <tr class="visible-xs">
+      </tr>
+      <tr>
+       <td><a href="#" class="btn btn-warning" th:href="@{'/downloadFile'}" ><i class="fa fa-angle-down"></i>Download Invoice</a></td>
+        <td colspan="2" class="hidden-xs"></td>
+
+      </tr>
+    </tfoot>
+  
+          
+        </table>
+
+
+</div>
+
+
+<div th:replace="/fragments/footer :: footer"/>
+
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="js/materialize.js" th:src="@{/js/materialize.js}"></script>
+<script src="js/init.js" th:src="@{/js/init.js}"></script>
+
+</body>
+</html>
